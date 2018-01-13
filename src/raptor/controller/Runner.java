@@ -1,5 +1,10 @@
-package tools.controller;
+package raptor.controller;
 
+/**
+ * Runs the project by calling the Controller
+ * @author Dustin Schimel
+ *
+ */
 public class Runner
 {
 	public static void main (String [] args)
