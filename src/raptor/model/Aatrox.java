@@ -4,11 +4,11 @@ public class Aatrox extends Champion
 {
 	public Aatrox()
 	{
-		super("Aatrox", "The Darkin Blade");
+		super("The Darkin Blade", "Aatrox");
 	}
 	
 	public Aatrox(String name)
 	{
-		super(name, "The Darkin Blade");
+		super("The Darkin Blade", name);
 	}
 }

@@ -8,7 +8,7 @@ public abstract class Champion
 	private String title;
 	
 	
-	public Champion (String name, String title)
+	public Champion (String title, String name)
 	{
 		this.name = name;
 		this.title = title;
