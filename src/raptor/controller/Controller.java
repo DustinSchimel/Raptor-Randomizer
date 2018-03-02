@@ -4,6 +4,9 @@ import raptor.model.*;
 import raptor.view.Frame;
 
 import java.util.List;
+
+import java.awt.Image;
+import java.awt.Toolkit;
 import java.util.ArrayList;
 
 public class Controller
@@ -17,6 +20,9 @@ public class Controller
 		buildChampionList();
 		
 		appFrame = new Frame(this);
+		
+		//Image icon = Toolkit.getDefaultToolkit().getImage("/raptor/view/images/AppIcon.png");
+	    //appFrame.setIconImage(icon);        Trying to get this to work
 	}
 	
 	public void buildChampionList()
