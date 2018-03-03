@@ -19,10 +19,10 @@ public class Controller
 	{
 		championList = new ArrayList<Champion>();
 		summonerSpellList = new ArrayList<String>();
+		appFrame = new Frame(this);
+		
 		buildChampionList();
 		buildSummonerSpellList();
-		
-		appFrame = new Frame(this);
 		
 		//Image icon = Toolkit.getDefaultToolkit().getImage("/raptor/view/images/AppIcon.png");
 	    //appFrame.setIconImage(icon);        Trying to get this to work
@@ -47,16 +47,6 @@ public class Controller
 		summonerSpellList.add("Smite");
 	}
 	
-	public List<Champion> getChampionList()
-	{
-		return championList;
-	}
-	
-	public List<String> getSummonerSpellList()
-	{
-		return summonerSpellList;
-	}
-	
 	public String [] convertChampionList()
 	{
 		String [] names = new String [championList.size()];
@@ -67,6 +57,16 @@ public class Controller
 		}
 		
 		return names;
+	}
+	
+	public List<Champion> getChampionList()
+	{
+		return championList;
+	}
+	
+	public List<String> getSummonerSpellList()
+	{
+		return summonerSpellList;
 	}
 	
 	public void start()

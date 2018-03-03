@@ -34,15 +34,22 @@ public class Panel extends JPanel
 		
 		nameLabel = new JLabel("Name", SwingConstants.CENTER);
 		nameLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+		
 		titleLabel = new JLabel("Title", SwingConstants.CENTER);
 		titleLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+		
 		championPicLabel = new JLabel("");
 		championPicLabel.setPreferredSize(new Dimension(200, 380));
+		
 		summonerSpell1 = new JLabel("");
 		summonerSpell1.setPreferredSize(new Dimension(64, 64));
+		
 		summonerSpell2 = new JLabel("");
 		summonerSpell2.setPreferredSize(new Dimension(64, 64));
+		
 		randomizeButton = new JButton("Randomize");
+		randomizeButton.setFont(new Font("Serif", Font.PLAIN, 15));
+		randomizeButton.setFocusPainted(false);
 		
 		setupPanel();
 		setupLayout();
@@ -94,17 +101,18 @@ public class Panel extends JPanel
 		championPicLabel.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/" + currentChampion.getName() 
 								 + "Picture.jpg")));
 		
-		summonerSpell1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/" + summonerSpells.get(0) + "Picture.png")));
-		summonerSpell2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/" + summonerSpells.get(1) + "Picture.png")));
+		summonerSpell1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/" + summonerSpells.get(0) 
+							   + "Picture.png")));
+		
+		summonerSpell2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/" 
+							   + summonerSpells.get(summonerSpells.size() - 1) + "Picture.png")));
 		
 	}
 	
 	private Champion randomizeChampion()
 	{
 		Random randomNum = new Random();
-		
 		int selectedChampionIndex;
-		
 		Champion selectedChampion;
 		
 		selectedChampionIndex = randomNum.nextInt(appController.getChampionList().size());
@@ -116,17 +124,16 @@ public class Panel extends JPanel
 	private ArrayList<String> randomizeSummonerSpells()
 	{
 		ArrayList<String> currentSummonerSpellList = new ArrayList<String>();
-		
 		Random randomNum = new Random();
+		int secondSpellindex = 0;
 		
 		currentSummonerSpellList.add(appController.getSummonerSpellList().get(randomNum.nextInt(appController.getSummonerSpellList().size())));
 		
-		currentSummonerSpellList.add(currentSummonerSpellList.get(0));
-		
-		//while (currentSummonerSpellList.get(0) == currentSummonerSpellList.get(1))
-		//{
-			//currentSummonerSpellList(1) = appController.getSummonerSpellList().get(randomNum.nextInt(appController.getSummonerSpellList().size()));
-		//}
+		while (currentSummonerSpellList.get(0).equals(currentSummonerSpellList.get(secondSpellindex)))
+		{
+			secondSpellindex++;
+			currentSummonerSpellList.add(appController.getSummonerSpellList().get(randomNum.nextInt(appController.getSummonerSpellList().size())));
+		}
 		
 		return currentSummonerSpellList;
 	}
