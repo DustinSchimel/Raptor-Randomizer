@@ -17,6 +17,8 @@ public class Panel extends JPanel
 	private JLabel nameLabel;
 	private JLabel titleLabel;
 	private JLabel championPicLabel;
+	private JLabel summonerSpell1;
+	private JLabel summonerSpell2;
 	
 	private JButton randomizeButton;
 	
@@ -28,7 +30,9 @@ public class Panel extends JPanel
 		
 		nameLabel = new JLabel("Name");
 		titleLabel = new JLabel("Title");
-		championPicLabel = new JLabel("");
+		championPicLabel = new JLabel("Picture");
+		summonerSpell1 = new JLabel("Spell 1");
+		summonerSpell2 = new JLabel("Spell 2");
 		randomizeButton = new JButton("Randomize");
 		
 		setupPanel();
@@ -44,6 +48,8 @@ public class Panel extends JPanel
 		this.add(nameLabel);
 		this.add(titleLabel);
 		this.add(championPicLabel);
+		this.add(summonerSpell1);
+		this.add(summonerSpell2);
 	}
 	
 	private void setupLayout()
@@ -58,6 +64,14 @@ public class Panel extends JPanel
 		appLayout.putConstraint(SpringLayout.WEST, titleLabel, 0, SpringLayout.WEST, randomizeButton);
 		appLayout.putConstraint(SpringLayout.SOUTH, titleLabel, -6, SpringLayout.NORTH, randomizeButton);
 		appLayout.putConstraint(SpringLayout.SOUTH, nameLabel, -6, SpringLayout.NORTH, titleLabel);
+		appLayout.putConstraint(SpringLayout.NORTH, summonerSpell2, 0, SpringLayout.NORTH, championPicLabel);
+		appLayout.putConstraint(SpringLayout.WEST, summonerSpell2, 6, SpringLayout.EAST, summonerSpell1);
+		appLayout.putConstraint(SpringLayout.SOUTH, summonerSpell2, -326, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, summonerSpell2, -86, SpringLayout.EAST, nameLabel);
+		appLayout.putConstraint(SpringLayout.NORTH, summonerSpell1, 0, SpringLayout.NORTH, championPicLabel);
+		appLayout.putConstraint(SpringLayout.WEST, summonerSpell1, 6, SpringLayout.EAST, championPicLabel);
+		appLayout.putConstraint(SpringLayout.SOUTH, summonerSpell1, -326, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, summonerSpell1, -156, SpringLayout.EAST, nameLabel);
 	}
 	
 	private void updateInfo(Champion currentChampion)
@@ -67,6 +81,26 @@ public class Panel extends JPanel
 		
 		championPicLabel.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/" + currentChampion.getName() 
 								 + "Picture.jpg")));
+		
+	}
+	
+	private Champion randomizeChampion()
+	{
+		Random randomNum = new Random();
+		
+		int selectedChampionIndex;
+		
+		Champion selectedChampion;
+		
+		selectedChampionIndex = randomNum.nextInt(appController.getChampionList().size());
+		selectedChampion = appController.getChampionList().get(selectedChampionIndex);
+		
+		return selectedChampion;
+	}
+	
+	private void randomizeSummonerSpells()
+	{
+		
 	}
 	
 	private void setupListeners()
@@ -75,17 +109,7 @@ public class Panel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				Random randomNum = new Random();
-				
-				int selectedChampionIndex;
-				
-				Champion selectedChampion;
-				
-				selectedChampionIndex = randomNum.nextInt(appController.getChampionList().size());
-				selectedChampion = appController.getChampionList().get(selectedChampionIndex);
-				
-				updateInfo(selectedChampion);
-				
+				updateInfo(randomizeChampion());
 			}
 		});
 	}
