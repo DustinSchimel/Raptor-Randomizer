@@ -12,12 +12,15 @@ import java.util.ArrayList;
 public class Controller
 {
 	private List<Champion> championList;
+	private List<String> summonerSpellList;
 	private Frame appFrame;
 	
 	public Controller()
 	{
 		championList = new ArrayList<Champion>();
+		summonerSpellList = new ArrayList<String>();
 		buildChampionList();
+		buildSummonerSpellList();
 		
 		appFrame = new Frame(this);
 		
@@ -31,9 +34,27 @@ public class Controller
 		championList.add(new Ahri());
 	}
 	
+	public void buildSummonerSpellList()
+	{
+		summonerSpellList.add("Barrier");
+		summonerSpellList.add("Cleanse");
+		summonerSpellList.add("Exhaust");
+		summonerSpellList.add("Flash");
+		summonerSpellList.add("Ghost");
+		summonerSpellList.add("Heal");
+		summonerSpellList.add("Ignite");
+		summonerSpellList.add("Teleport");
+		summonerSpellList.add("Smite");
+	}
+	
 	public List<Champion> getChampionList()
 	{
 		return championList;
+	}
+	
+	public List<String> getSummonerSpellList()
+	{
+		return summonerSpellList;
 	}
 	
 	public String [] convertChampionList()
