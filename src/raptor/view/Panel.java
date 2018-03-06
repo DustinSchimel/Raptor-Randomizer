@@ -77,10 +77,8 @@ public class Panel extends JPanel
 		appLayout.putConstraint(SpringLayout.WEST, randomizeButton, 0, SpringLayout.WEST, nameLabel);
 		appLayout.putConstraint(SpringLayout.SOUTH, randomizeButton, 0, SpringLayout.SOUTH, championPicLabel);
 		appLayout.putConstraint(SpringLayout.EAST, randomizeButton, 0, SpringLayout.EAST, nameLabel);
-		appLayout.putConstraint(SpringLayout.NORTH, summonerSpell2, 6, SpringLayout.SOUTH, titleLabel);
 		appLayout.putConstraint(SpringLayout.SOUTH, summonerSpell2, 0, SpringLayout.SOUTH, summonerSpell1);
 		appLayout.putConstraint(SpringLayout.WEST, summonerSpell2, 0, SpringLayout.WEST, titleLabel);
-		appLayout.putConstraint(SpringLayout.EAST, summonerSpell2, -282, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.NORTH, summonerSpell1, 71, SpringLayout.NORTH, this);
 		appLayout.putConstraint(SpringLayout.WEST, summonerSpell1, 8, SpringLayout.EAST, championPicLabel);
 		appLayout.putConstraint(SpringLayout.SOUTH, summonerSpell1, -219, SpringLayout.SOUTH, this);
@@ -91,6 +89,8 @@ public class Panel extends JPanel
 		appLayout.putConstraint(SpringLayout.NORTH, nameLabel, 0, SpringLayout.NORTH, championPicLabel);
 		appLayout.putConstraint(SpringLayout.NORTH, titleLabel, 1, SpringLayout.SOUTH, nameLabel);
 		appLayout.putConstraint(SpringLayout.EAST, nameLabel, -179, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, summonerSpell2, 20, SpringLayout.SOUTH, titleLabel);
+		appLayout.putConstraint(SpringLayout.EAST, summonerSpell2, -284, SpringLayout.EAST, this);
 	}
 	
 	private void updateInfo(Champion currentChampion, ArrayList<String> summonerSpells)
