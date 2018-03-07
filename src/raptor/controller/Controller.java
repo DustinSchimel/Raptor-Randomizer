@@ -32,6 +32,16 @@ public class Controller
 	{
 		championList.add(new Aatrox());
 		championList.add(new Ahri());
+		championList.add(new Akali());
+		championList.add(new Alistar());
+		championList.add(new Amumu());
+		championList.add(new Anivia());
+		championList.add(new Annie());
+		championList.add(new Ashe());
+		championList.add(new AurelionSol());
+		championList.add(new Azir());
+		championList.add(new Bard());
+		championList.add(new Blitzcrank());
 	}
 	
 	public void buildSummonerSpellList()

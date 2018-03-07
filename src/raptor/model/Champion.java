@@ -26,6 +26,11 @@ public abstract class Champion
 		return name;
 	}
 	
+	public String getNameForFile()
+	{
+		return name.replaceAll(" ", "");
+	}
+	
 	public String getTitle()
 	{
 		return title;
