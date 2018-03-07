@@ -23,6 +23,13 @@ public class Panel extends JPanel
 	private JLabel championPicLabel;
 	private JLabel summonerSpell1;
 	private JLabel summonerSpell2;
+	private JLabel runes1Keystone;
+	private JLabel runes1Slot1;
+	private JLabel runes1Slot2;
+	private JLabel runes1Slot3;
+	private JLabel runes2Slot1;
+	private JLabel runes2Slot2;
+	
 	
 	private JButton randomizeButton;
 	
@@ -46,6 +53,18 @@ public class Panel extends JPanel
 		
 		summonerSpell2 = new JLabel("");
 		summonerSpell2.setPreferredSize(new Dimension(64, 64));
+		
+		runes1Keystone = new JLabel("");
+		
+		runes1Slot1 = new JLabel("");
+		
+		runes1Slot2 = new JLabel("");
+		
+		runes1Slot3 = new JLabel("");
+		
+		runes2Slot1 = new JLabel("");
+		
+		runes2Slot2 = new JLabel("");
 		
 		randomizeButton = new JButton("Randomize");
 		randomizeButton.setFont(new Font("Serif", Font.PLAIN, 15));
