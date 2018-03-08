@@ -28,7 +28,25 @@ public abstract class Champion
 	
 	public String getNameForFile()
 	{
-		return name.replaceAll(" ", "");
+		if (name.indexOf(". ") != -1)
+		{
+			return name.replaceAll(". ", "");
+		}
+		
+		else if (name.indexOf("'") != -1)
+		{
+			return name.replaceAll("'", "");
+		}
+		
+		else if (name.indexOf(" ") != -1)
+		{
+			return name.replaceAll(" ", "");
+		}
+		
+		else
+		{
+			return name;
+		}
 	}
 	
 	public String getTitle()

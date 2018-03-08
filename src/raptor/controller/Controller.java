@@ -42,6 +42,16 @@ public class Controller
 		championList.add(new Azir());
 		championList.add(new Bard());
 		championList.add(new Blitzcrank());
+		championList.add(new Brand());
+		championList.add(new Braum());
+		championList.add(new Caitlyn());
+		championList.add(new Camille());
+		championList.add(new Cassiopeia());
+		championList.add(new ChoGath());
+		championList.add(new Corki());
+		championList.add(new Darius());
+		championList.add(new Diana());
+		championList.add(new DrMundo());
 	}
 	
 	public void buildSummonerSpellList()
