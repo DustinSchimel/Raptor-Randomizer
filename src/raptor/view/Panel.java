@@ -71,38 +71,38 @@ public class Panel extends JPanel
 		appLayout.putConstraint(SpringLayout.NORTH, runes1Keystone, 127, SpringLayout.NORTH, this);
 		appLayout.putConstraint(SpringLayout.EAST, runes1Keystone, -80, SpringLayout.EAST, this);
 		runes1Keystone.setPreferredSize(new Dimension(64, 64));
-		runes1Keystone.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/PressTheAttackPicture.png")));
+		//runes1Keystone.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/PressTheAttackPicture.png")));
 		
 		runes1Slot1 = new JLabel("");
 		appLayout.putConstraint(SpringLayout.NORTH, runes1Slot1, 6, SpringLayout.SOUTH, runes1Keystone);
 		appLayout.putConstraint(SpringLayout.WEST, runes1Slot1, 0, SpringLayout.WEST, runes1Keystone);
 		runes1Slot1.setPreferredSize(new Dimension(64, 64));
-		runes1Slot1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/PressTheAttackPicture.png")));
+		//runes1Slot1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/PressTheAttackPicture.png")));
 		
 		runes1Slot2 = new JLabel("");
 		appLayout.putConstraint(SpringLayout.NORTH, runes1Slot2, 6, SpringLayout.SOUTH, runes1Slot1);
 		appLayout.putConstraint(SpringLayout.WEST, runes1Slot2, 0, SpringLayout.WEST, runes1Keystone);
 		runes1Slot2.setPreferredSize(new Dimension(64, 64));
-		runes1Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/PressTheAttackPicture.png")));
+		//runes1Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/PressTheAttackPicture.png")));
 		
 		runes1Slot3 = new JLabel("");
 		appLayout.putConstraint(SpringLayout.NORTH, runes1Slot3, 6, SpringLayout.SOUTH, titleLabel);
 		appLayout.putConstraint(SpringLayout.WEST, runes1Slot3, 0, SpringLayout.WEST, runes1Keystone);
 		runes1Slot3.setPreferredSize(new Dimension(64, 64));
-		runes1Slot3.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/PressTheAttackPicture.png")));
+		//runes1Slot3.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/PressTheAttackPicture.png")));
 		
 		runes2Slot1 = new JLabel("");
 		appLayout.putConstraint(SpringLayout.WEST, runes2Slot1, 6, SpringLayout.EAST, runes1Slot1);
 		appLayout.putConstraint(SpringLayout.SOUTH, runes2Slot1, 0, SpringLayout.SOUTH, runes1Slot1);
 		runes2Slot1.setPreferredSize(new Dimension(64, 64));
-		runes2Slot1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/ElectrocutePicture.png")));
+		//runes2Slot1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/ElectrocutePicture.png")));
 		
 		runes2Slot2 = new JLabel("");
 		appLayout.putConstraint(SpringLayout.NORTH, runes2Slot2, 117, SpringLayout.NORTH, nameLabel);
 		appLayout.putConstraint(SpringLayout.SOUTH, runes2Slot2, 0, SpringLayout.SOUTH, runes1Keystone);
 		appLayout.putConstraint(SpringLayout.EAST, runes2Slot2, 0, SpringLayout.EAST, nameLabel);
 		runes2Slot2.setPreferredSize(new Dimension(64, 64));
-		runes2Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/ElectrocutePicture.png")));
+		//runes2Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/ElectrocutePicture.png")));
 		
 		randomizeButton = new JButton("Randomize");
 		appLayout.putConstraint(SpringLayout.WEST, randomizeButton, 371, SpringLayout.WEST, this);
@@ -126,12 +126,12 @@ public class Panel extends JPanel
 		this.add(championPicLabel);
 		this.add(summonerSpell1);
 		this.add(summonerSpell2);
-		this.add(runes1Keystone); 	//Testing
-		this.add(runes1Slot1); 		//Testing
-		this.add(runes1Slot2); 		//Testing
-		this.add(runes1Slot3); 		//Testing
-		this.add(runes2Slot1);	    //Testing
-		this.add(runes2Slot2);		//Testing
+		this.add(runes1Keystone); 		//Testing
+		this.add(runes1Slot1); 			//Testing
+		this.add(runes1Slot2); 			//Testing
+		this.add(runes1Slot3); 			//Testing
+		this.add(runes2Slot1);	    	//Testing
+		this.add(runes2Slot2);			//Testing
 	}
 	
 	private void setupLayout()
@@ -152,17 +152,17 @@ public class Panel extends JPanel
 		nameLabel.setText(currentChampion.getName());
 		titleLabel.setText(currentChampion.getTitle());
 		
-		championPicLabel.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/" + currentChampion.getNameForFile() 
+		championPicLabel.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/champions/" + currentChampion.getNameForFile() 
 								 + "Picture.jpg")));
 		
-		summonerSpell1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/" + summonerSpells.get(0) 
+		summonerSpell1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/spells/" + summonerSpells.get(0) 
 							   + "Picture.png")));
 		
-		summonerSpell2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/" 
+		summonerSpell2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/spells/" 
 							   + summonerSpells.get(summonerSpells.size() - 1) + "Picture.png")));
 		
-		runes1Path.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/" 
-				   			   + randomizeRunes().get(0) + "Picture.png")));
+		//runes1Path.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/" 
+		//		   			   + randomizeRunes().get(0) + "Picture.png")));
 		
 	}
 	
