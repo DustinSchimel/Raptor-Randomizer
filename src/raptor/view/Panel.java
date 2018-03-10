@@ -144,6 +144,8 @@ public class Panel extends JPanel
 		randomizeButton.setFont(new Font("Serif", Font.PLAIN, 15));
 		randomizeButton.setFocusPainted(false);
 		
+		championPicLabel.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/200x380Box.jpg")));
+		
 		runesKeystone.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/64x64Box.png")));
 		
 		runes1Slot1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/64x64Box.png")));
