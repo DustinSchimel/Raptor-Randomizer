@@ -23,7 +23,7 @@ public class Frame extends JFrame
 		this.setContentPane(appPanel);
 		this.setTitle("Raptor Randomizer");
 		this.setResizable(false);
-		this.setSize(650, 400);
+		this.setSize(650, 425);
 		this.setVisible(true);	
 	}
 	
