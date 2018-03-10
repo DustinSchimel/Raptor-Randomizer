@@ -51,7 +51,23 @@ public class Controller
 		championList.add(new Corki());
 		championList.add(new Darius());
 		championList.add(new Diana());
+		championList.add(new Draven());
 		championList.add(new DrMundo());
+		championList.add(new Ekko());
+		championList.add(new Elise());
+		championList.add(new Evelynn());
+		championList.add(new Ezreal());
+		championList.add(new Fiddlesticks());
+		championList.add(new Fiora());
+		championList.add(new Fizz());
+		championList.add(new Galio());
+		championList.add(new Gangplank());
+		championList.add(new Garen());
+		championList.add(new Gnar());
+		championList.add(new Gragas());
+		championList.add(new Graves());
+		championList.add(new Hecarim());
+		
 	}
 	
 	public void buildSummonerSpellList()
