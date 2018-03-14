@@ -275,106 +275,122 @@ public class Panel extends JPanel
 		ArrayList<String> allRunes = new ArrayList<String>();
 		Random randomNum = new Random();
 		
-		int runesPath = randomNum.nextInt(5);	//Need to update as more paths are added
+		boolean pickingSlot4and5 = false;
 		
-		switch (runesPath)			//Picks the main rune path as well as the keystone and minor runes for that path
+		for (int index = 0; index < 2; index++)
 		{
-        case 0:  allRunes.add("Precision");
-        
-        		 ArrayList<String> PrecisionKeystones = new ArrayList<>();
-        		 PrecisionKeystones.add("PressTheAttack");
-        		 PrecisionKeystones.add("LethalTempo");
-        		 PrecisionKeystones.add("FleetFootwork");
-        		 allRunes.add(PrecisionKeystones.get(randomNum.nextInt(PrecisionKeystones.size())));
-        		 
-        		 int slot1Rune = randomNum.nextInt(3);
-        		 int slot2Rune = randomNum.nextInt(3);
-        		 int slot3Rune = randomNum.nextInt(3);
-        		 
-        		 if(slot1Rune == 1)
-        		 {
-        			 allRunes.add("Overheal");
-        		 }
-        		 else if(slot1Rune == 2)
-        		 {
-        			 allRunes.add("Triumph");
-        		 }
-        		 else if(slot1Rune == 3)
-        		 {
-        			 allRunes.add("Presence of Mind");
-        		 }
-        		 
-        		 if(slot2Rune == 1)
-        		 {
-        			 allRunes.add("Legend: Alacrity");
-        		 }
-        		 else if(slot2Rune == 2)
-        		 {
-        			 allRunes.add("Legend: Tenacity");
-        		 }
-        		 else if(slot2Rune == 3)
-        		 {
-        			 allRunes.add("Legend: Bloodline");
-        		 }
-        		 
-        		 if(slot3Rune == 1)
-        		 {
-        			 allRunes.add("Coup de Grace");
-        		 }
-        		 else if(slot3Rune == 2)
-        		 {
-        			 allRunes.add("Cut Down");
-        		 }
-        		 else if(slot3Rune == 3)
-        		 {
-        			 allRunes.add("Last Stand");
-        		 }
-        		 
-             break;
-                 
-        case 1:  allRunes.add("Domination");
-        
-        		 ArrayList<String> DominationKeystones = new ArrayList<>();
-        		 DominationKeystones.add("Electrocute");
-        		 DominationKeystones.add("Predator");
-        		 DominationKeystones.add("DarkHarvest");
-        		 allRunes.add(DominationKeystones.get(randomNum.nextInt(DominationKeystones.size())));
-        		 break;
-        
-        case 2:  allRunes.add("Sorcery");
-        
-        		 ArrayList<String> SorceryKeystones = new ArrayList<>();
-        		 SorceryKeystones.add("SummonAery");
-        		 SorceryKeystones.add("ArcaneComet");
-        		 SorceryKeystones.add("PhaseRush");
-        		 allRunes.add(SorceryKeystones.get(randomNum.nextInt(SorceryKeystones.size())));
-        		 break;
-              
-        case 3:  allRunes.add("Resolve");
-        
-       		 ArrayList<String> ResolveKeystones = new ArrayList<>();
-       		 ResolveKeystones.add("GraspOfTheUndying");
-       		 ResolveKeystones.add("Aftershock");
-       		 ResolveKeystones.add("Guardian");
-       		 allRunes.add(ResolveKeystones.get(randomNum.nextInt(ResolveKeystones.size())));
-       		 break;
-       			 
-        case 4:  allRunes.add("Inspiration");
-                 
-        		 ArrayList<String> InspirationKeystones = new ArrayList<>();
-        		 InspirationKeystones.add("UnsealedSpellbook");
-        		 InspirationKeystones.add("GlacialAugment");
-        		 InspirationKeystones.add("Kleptomancy");
-        		 allRunes.add(InspirationKeystones.get(randomNum.nextInt(InspirationKeystones.size())));
-        		 break;
-        
-        default: allRunes.add("InvalidPath");
-        
-        		 allRunes.add("InvalidKeystone");
-        		 break;
+			int runesPath = randomNum.nextInt(5);	//Need to update as more paths are added
+			
+			switch (runesPath)			//Picks the main rune path as well as the keystone and minor runes for that path
+			{
+	        case 0:  
+	        	
+	        		 if (pickingSlot4and5 == false)
+	        		 {
+	        			 allRunes.add("Precision");
+	        		        
+		        		 ArrayList<String> PrecisionKeystones = new ArrayList<>();
+		        		 PrecisionKeystones.add("PressTheAttack");
+		        		 PrecisionKeystones.add("LethalTempo");
+		        		 PrecisionKeystones.add("FleetFootwork");
+		        		 allRunes.add(PrecisionKeystones.get(randomNum.nextInt(PrecisionKeystones.size())));
+		        		 
+		        		 int slot1Rune = randomNum.nextInt(3);
+		        		 int slot2Rune = randomNum.nextInt(3);
+		        		 int slot3Rune = randomNum.nextInt(3);
+		        		 
+	        			 if(slot1Rune == 1)
+	        			 {
+	        				 allRunes.add("Overheal");
+	        			 }
+	        			 else if(slot1Rune == 2)
+	        			 {
+	        				 allRunes.add("Triumph");
+	        			 }
+	        			 else if(slot1Rune == 3)
+	        			 {
+	        				 allRunes.add("Presence of Mind");
+	        			 }
+	        		 
+	        		 	 if(slot2Rune == 1)
+	        		 	 {
+	        		 		 allRunes.add("Legend: Alacrity");
+	        		 	 }
+	        		 	 else if(slot2Rune == 2)
+	        		 	 {
+	        		 		 allRunes.add("Legend: Tenacity");
+	        		 	 }
+	        		 	 else if(slot2Rune == 3)
+	        		 	 {
+	        		 		 allRunes.add("Legend: Bloodline");
+	        		 	 }
+	        		 
+	        		 	 if(slot3Rune == 1)
+	        		 	 {
+	        		 		 allRunes.add("Coup de Grace");
+	        		 	 }
+	        		 	 else if(slot3Rune == 2)
+	        		 	 {
+	        		 		 allRunes.add("Cut Down");
+	        		 	 }
+	        		 	 else if(slot3Rune == 3)
+	        		 	 {
+	        		 		 allRunes.add("Last Stand");
+	        		 	 }
+	        		 }
+	        		 
+	        		 else
+	        		 {
+	        			 int slot4RuneRow = randomNum.nextInt(3);
+		        		 int slot5RuneRow = randomNum.nextInt(3);//Need to edit these
+	        		 }
+	        		 
+	        		 break;
+	                 
+	        case 1:  allRunes.add("Domination");
+	        
+	        		 ArrayList<String> DominationKeystones = new ArrayList<>();
+	        		 DominationKeystones.add("Electrocute");
+	        		 DominationKeystones.add("Predator");
+	        		 DominationKeystones.add("DarkHarvest");
+	        		 allRunes.add(DominationKeystones.get(randomNum.nextInt(DominationKeystones.size())));
+	        		 break;
+	        
+	        case 2:  allRunes.add("Sorcery");
+	        
+	        		 ArrayList<String> SorceryKeystones = new ArrayList<>();
+	        		 SorceryKeystones.add("SummonAery");
+	        		 SorceryKeystones.add("ArcaneComet");
+	        		 SorceryKeystones.add("PhaseRush");
+	        		 allRunes.add(SorceryKeystones.get(randomNum.nextInt(SorceryKeystones.size())));
+	        		 break;
+	              
+	        case 3:  allRunes.add("Resolve");
+	        
+	       		 ArrayList<String> ResolveKeystones = new ArrayList<>();
+	       		 ResolveKeystones.add("GraspOfTheUndying");
+	       		 ResolveKeystones.add("Aftershock");
+	       		 ResolveKeystones.add("Guardian");
+	       		 allRunes.add(ResolveKeystones.get(randomNum.nextInt(ResolveKeystones.size())));
+	       		 break;
+	       			 
+	        case 4:  allRunes.add("Inspiration");
+	                 
+	        		 ArrayList<String> InspirationKeystones = new ArrayList<>();
+	        		 InspirationKeystones.add("UnsealedSpellbook");
+	        		 InspirationKeystones.add("GlacialAugment");
+	        		 InspirationKeystones.add("Kleptomancy");
+	        		 allRunes.add(InspirationKeystones.get(randomNum.nextInt(InspirationKeystones.size())));
+	        		 break;
+	        
+	        default: allRunes.add("InvalidPath");
+	        
+	        		 allRunes.add("InvalidKeystone");
+	        		 break;
+			}
+			
+			return allRunes;
 		}
-		
-		return allRunes;
 	}
 	
 	private void setupListeners()
