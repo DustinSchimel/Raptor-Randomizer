@@ -67,6 +67,26 @@ public class Controller
 		championList.add(new Gragas());
 		championList.add(new Graves());
 		championList.add(new Hecarim());
+		championList.add(new Heimerdinger());
+		championList.add(new Illaoi());
+		championList.add(new Irelia());
+		championList.add(new Ivern());
+		championList.add(new Janna());
+		championList.add(new JarvanIV());
+		championList.add(new Jax());
+		championList.add(new Jayce());
+		championList.add(new Jhin());
+		championList.add(new Jinx());
+		championList.add(new KaiSa());
+		championList.add(new Kalista());
+		championList.add(new Karma());
+		championList.add(new Karthus());
+		championList.add(new Kassadin());
+		championList.add(new Katarina());
+		championList.add(new Kayle());
+		championList.add(new Kayn());
+		championList.add(new Kennen());
+		championList.add(new KhaZix());
 		
 	}
 	
