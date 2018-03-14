@@ -203,8 +203,13 @@ public class Panel extends JPanel
 		appLayout.putConstraint(SpringLayout.SOUTH, runes1Slot2, -104, SpringLayout.SOUTH, this);
 	}
 	
-	private void updateInfo(Champion currentChampion, ArrayList<String> summonerSpells, ArrayList<String> runes)
+	private void updateInfo()
 	{
+		Champion currentChampion = randomizeChampion();
+		ArrayList<String> summonerSpells = randomizeSummonerSpells();
+		ArrayList<String> runes = randomizeRunes();
+		
+		
 		nameLabel.setText(currentChampion.getName());
 		titleLabel.setText(currentChampion.getTitle());
 		
@@ -281,6 +286,50 @@ public class Panel extends JPanel
         		 PrecisionKeystones.add("LethalTempo");
         		 PrecisionKeystones.add("FleetFootwork");
         		 allRunes.add(PrecisionKeystones.get(randomNum.nextInt(PrecisionKeystones.size())));
+        		 
+        		 int slot1Rune = randomNum.nextInt(3);
+        		 int slot2Rune = randomNum.nextInt(3);
+        		 int slot3Rune = randomNum.nextInt(3);
+        		 
+        		 if(slot1Rune == 1)
+        		 {
+        			 allRunes.add("Overheal");
+        		 }
+        		 else if(slot1Rune == 2)
+        		 {
+        			 allRunes.add("Triumph");
+        		 }
+        		 else if(slot1Rune == 3)
+        		 {
+        			 allRunes.add("Presence of Mind");
+        		 }
+        		 
+        		 if(slot2Rune == 1)
+        		 {
+        			 allRunes.add("Legend: Alacrity");
+        		 }
+        		 else if(slot2Rune == 2)
+        		 {
+        			 allRunes.add("Legend: Tenacity");
+        		 }
+        		 else if(slot2Rune == 3)
+        		 {
+        			 allRunes.add("Legend: Bloodline");
+        		 }
+        		 
+        		 if(slot3Rune == 1)
+        		 {
+        			 allRunes.add("Coup de Grace");
+        		 }
+        		 else if(slot3Rune == 2)
+        		 {
+        			 allRunes.add("Cut Down");
+        		 }
+        		 else if(slot3Rune == 3)
+        		 {
+        			 allRunes.add("Last Stand");
+        		 }
+        		 
              break;
                  
         case 1:  allRunes.add("Domination");
@@ -334,7 +383,7 @@ public class Panel extends JPanel
 		{
 			public void actionPerformed(ActionEvent click)
 			{
-				updateInfo(randomizeChampion(), randomizeSummonerSpells(), randomizeRunes());
+				updateInfo();
 			}
 		});
 	}
