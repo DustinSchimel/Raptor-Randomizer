@@ -237,8 +237,8 @@ public class Panel extends JPanel
 		runes2Slot1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
 								 + runes.get(5) + "Picture.png")));  //Change as runes are added
 		
-		//runes2Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
-		//						 + runes.get(6) + "Picture.png")));  //Change as runes are added
+		runes2Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
+								 + runes.get(6) + "Picture.png")));  //Change as runes are added
 	}
 	
 	private Champion randomizeChampion()
@@ -298,7 +298,7 @@ public class Panel extends JPanel
 	        		 if (pickingSlot4and5 == false)
 	        		 {
 	        			 allRunes.add("Precision");
-	        			 keystonePath = 1;
+	        			 keystonePath = 0;
 	        		        
 		        		 ArrayList<String> PrecisionKeystones = new ArrayList<>();
 		        		 PrecisionKeystones.add("PressTheAttack");
@@ -354,54 +354,69 @@ public class Panel extends JPanel
 	        		 
 	        		 else
 	        		 {
-	        			 int slot4RuneRow = randomNum.nextInt(3);
-	        			 int rune = randomNum.nextInt(3);
-		        		 //int slot5RuneRow = randomNum.nextInt(3);//Need to edit these
+	        			 int firstRow = 0;
 	        			 
-	        			 if (slot4RuneRow == 0)
-	        			 {
-	        				 if(rune == 0)
+	        			 for(int index = 0; index < 2; index++)
+	        			 { 
+	        				 int runeRow = randomNum.nextInt(3);
+	        				 int rune = randomNum.nextInt(3);				 
+	        				 
+	        				 while (index == 1 && runeRow == firstRow)
+	        				 {
+	        					 runeRow = randomNum.nextInt(3);
+	        				 }
+	        				 
+		        			 if (runeRow == 0)
 		        			 {
-		        				 allRunes.add("Overheal");
+		        				 firstRow = 0;
+		        				 
+		        				 if(rune == 0)
+			        			 {
+			        				 allRunes.add("Overheal");
+			        			 }
+			        			 else if(rune == 1)
+			        			 {
+			        				 allRunes.add("Triumph");
+			        			 }
+			        			 else if(rune == 2)
+			        			 {
+			        				 allRunes.add("PresenceOfMind");
+			        			 }
 		        			 }
-		        			 else if(rune == 1)
+		        			 else if (runeRow == 1)
 		        			 {
-		        				 allRunes.add("Triumph");
+		        				 firstRow = 1;
+		        				 
+		        				 if(rune == 0)
+			        		 	 {
+			        		 		 allRunes.add("LegendAlacrity");
+			        		 	 }
+			        		 	 else if(rune == 1)
+			        		 	 {
+			        		 		 allRunes.add("LegendTenacity");
+			        		 	 }
+			        		 	 else if(rune == 2)
+			        		 	 {
+			        		 		 allRunes.add("LegendBloodline");
+			        		 	 }
 		        			 }
-		        			 else if(rune == 2)
+		        			 else if (runeRow == 2)
 		        			 {
-		        				 allRunes.add("PresenceOfMind");
+		        				 firstRow = 2;
+		        				 
+		        				 if(rune == 0)
+			        		 	 {
+			        		 		 allRunes.add("CoupDeGrace");
+			        		 	 }
+			        		 	 else if(rune == 1)
+			        		 	 {
+			        		 		 allRunes.add("CutDown");
+			        		 	 }
+			        		 	 else if(rune == 2)
+			        		 	 {
+			        		 		 allRunes.add("LastStand");
+			        		 	 }
 		        			 }
-	        			 }
-	        			 else if (slot4RuneRow == 1)
-	        			 {
-	        				 if(rune == 0)
-		        		 	 {
-		        		 		 allRunes.add("LegendAlacrity");
-		        		 	 }
-		        		 	 else if(rune == 1)
-		        		 	 {
-		        		 		 allRunes.add("LegendTenacity");
-		        		 	 }
-		        		 	 else if(rune == 2)
-		        		 	 {
-		        		 		 allRunes.add("LegendBloodline");
-		        		 	 }
-	        			 }
-	        			 else if (slot4RuneRow == 2)
-	        			 {
-	        				 if(rune == 0)
-		        		 	 {
-		        		 		 allRunes.add("CoupDeGrace");
-		        		 	 }
-		        		 	 else if(rune == 1)
-		        		 	 {
-		        		 		 allRunes.add("CutDown");
-		        		 	 }
-		        		 	 else if(rune == 2)
-		        		 	 {
-		        		 		 allRunes.add("LastStand");
-		        		 	 }
 	        			 }
 	        			 
 	        			 choosingRunes = false;
