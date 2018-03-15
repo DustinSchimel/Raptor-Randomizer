@@ -226,19 +226,19 @@ public class Panel extends JPanel
 				   			     + runes.get(1) + "Picture.png")));
 		
 		runes1Slot1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/"
-								 + runes.get(1) + "Picture.png")));	//Change as runes are added
+								 + runes.get(2) + "Picture.png")));	//Change as runes are added
 		
 		runes1Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
-								 + runes.get(1) + "Picture.png")));	//Change as runes are added
+								 + runes.get(3) + "Picture.png")));	//Change as runes are added
 		
 		runes1Slot3.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
-							 	 + runes.get(1) + "Picture.png")));  //Change as runes are added
+							 	 + runes.get(4) + "Picture.png")));  //Change as runes are added
 		
 		runes2Slot1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
-								 + runes.get(1) + "Picture.png")));  //Change as runes are added
+								 + runes.get(5) + "Picture.png")));  //Change as runes are added
 		
-		runes2Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
-								 + runes.get(1) + "Picture.png")));  //Change as runes are added
+		//runes2Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
+		//						 + runes.get(6) + "Picture.png")));  //Change as runes are added
 	}
 	
 	private Champion randomizeChampion()
@@ -275,11 +275,21 @@ public class Panel extends JPanel
 		ArrayList<String> allRunes = new ArrayList<String>();
 		Random randomNum = new Random();
 		
+		int keystonePath = 0;
+		
+		boolean choosingRunes = true;
 		boolean pickingSlot4and5 = false;
 		
-		for (int index = 0; index < 2; index++)
+		while (choosingRunes == true)
 		{
-			int runesPath = randomNum.nextInt(5);	//Need to update as more paths are added
+			//int runesPath = randomNum.nextInt(5);	//Need to update as more paths are added
+			
+			int runesPath = 0;
+			
+			//if(pickingSlot4and5 == true && runesPath == keystonePath)
+			//{
+			//	runesPath = randomNum.nextInt(5);
+			//}
 			
 			switch (runesPath)			//Picks the main rune path as well as the keystone and minor runes for that path
 			{
@@ -288,6 +298,7 @@ public class Panel extends JPanel
 	        		 if (pickingSlot4and5 == false)
 	        		 {
 	        			 allRunes.add("Precision");
+	        			 keystonePath = 1;
 	        		        
 		        		 ArrayList<String> PrecisionKeystones = new ArrayList<>();
 		        		 PrecisionKeystones.add("PressTheAttack");
@@ -299,62 +310,218 @@ public class Panel extends JPanel
 		        		 int slot2Rune = randomNum.nextInt(3);
 		        		 int slot3Rune = randomNum.nextInt(3);
 		        		 
-	        			 if(slot1Rune == 1)
+	        			 if(slot1Rune == 0)
 	        			 {
 	        				 allRunes.add("Overheal");
 	        			 }
-	        			 else if(slot1Rune == 2)
+	        			 else if(slot1Rune == 1)
 	        			 {
 	        				 allRunes.add("Triumph");
 	        			 }
-	        			 else if(slot1Rune == 3)
+	        			 else if(slot1Rune == 2)
 	        			 {
-	        				 allRunes.add("Presence of Mind");
+	        				 allRunes.add("PresenceOfMind");
 	        			 }
 	        		 
-	        		 	 if(slot2Rune == 1)
+	        		 	 if(slot2Rune == 0)
 	        		 	 {
-	        		 		 allRunes.add("Legend: Alacrity");
+	        		 		 allRunes.add("LegendAlacrity");
+	        		 	 }
+	        		 	 else if(slot2Rune == 1)
+	        		 	 {
+	        		 		 allRunes.add("LegendTenacity");
 	        		 	 }
 	        		 	 else if(slot2Rune == 2)
 	        		 	 {
-	        		 		 allRunes.add("Legend: Tenacity");
-	        		 	 }
-	        		 	 else if(slot2Rune == 3)
-	        		 	 {
-	        		 		 allRunes.add("Legend: Bloodline");
+	        		 		 allRunes.add("LegendBloodline");
 	        		 	 }
 	        		 
-	        		 	 if(slot3Rune == 1)
+	        		 	 if(slot3Rune == 0)
 	        		 	 {
-	        		 		 allRunes.add("Coup de Grace");
+	        		 		 allRunes.add("CoupDeGrace");
+	        		 	 }
+	        		 	 else if(slot3Rune == 1)
+	        		 	 {
+	        		 		 allRunes.add("CutDown");
 	        		 	 }
 	        		 	 else if(slot3Rune == 2)
 	        		 	 {
-	        		 		 allRunes.add("Cut Down");
+	        		 		 allRunes.add("LastStand");
 	        		 	 }
-	        		 	 else if(slot3Rune == 3)
-	        		 	 {
-	        		 		 allRunes.add("Last Stand");
-	        		 	 }
+	        		 	 
+	        		 	 pickingSlot4and5 = true;
 	        		 }
 	        		 
 	        		 else
 	        		 {
 	        			 int slot4RuneRow = randomNum.nextInt(3);
-		        		 int slot5RuneRow = randomNum.nextInt(3);//Need to edit these
+	        			 int rune = randomNum.nextInt(3);
+		        		 //int slot5RuneRow = randomNum.nextInt(3);//Need to edit these
+	        			 
+	        			 if (slot4RuneRow == 0)
+	        			 {
+	        				 if(rune == 0)
+		        			 {
+		        				 allRunes.add("Overheal");
+		        			 }
+		        			 else if(rune == 1)
+		        			 {
+		        				 allRunes.add("Triumph");
+		        			 }
+		        			 else if(rune == 2)
+		        			 {
+		        				 allRunes.add("PresenceOfMind");
+		        			 }
+	        			 }
+	        			 else if (slot4RuneRow == 1)
+	        			 {
+	        				 if(rune == 0)
+		        		 	 {
+		        		 		 allRunes.add("LegendAlacrity");
+		        		 	 }
+		        		 	 else if(rune == 1)
+		        		 	 {
+		        		 		 allRunes.add("LegendTenacity");
+		        		 	 }
+		        		 	 else if(rune == 2)
+		        		 	 {
+		        		 		 allRunes.add("LegendBloodline");
+		        		 	 }
+	        			 }
+	        			 else if (slot4RuneRow == 2)
+	        			 {
+	        				 if(rune == 0)
+		        		 	 {
+		        		 		 allRunes.add("CoupDeGrace");
+		        		 	 }
+		        		 	 else if(rune == 1)
+		        		 	 {
+		        		 		 allRunes.add("CutDown");
+		        		 	 }
+		        		 	 else if(rune == 2)
+		        		 	 {
+		        		 		 allRunes.add("LastStand");
+		        		 	 }
+	        			 }
+	        			 
+	        			 choosingRunes = false;
 	        		 }
 	        		 
 	        		 break;
-	                 
-	        case 1:  allRunes.add("Domination");
-	        
+	        /*         
+	        case 1:  
+	        	
+       		 if (pickingSlot4and5 == false)
+       		 {
+       			 allRunes.add("Domination");
+       			 keystonePath = 1;
+       		        
 	        		 ArrayList<String> DominationKeystones = new ArrayList<>();
 	        		 DominationKeystones.add("Electrocute");
 	        		 DominationKeystones.add("Predator");
 	        		 DominationKeystones.add("DarkHarvest");
 	        		 allRunes.add(DominationKeystones.get(randomNum.nextInt(DominationKeystones.size())));
-	        		 break;
+	        		 
+	        		 int slot1Rune = randomNum.nextInt(3);
+	        		 int slot2Rune = randomNum.nextInt(3);
+	        		 int slot3Rune = randomNum.nextInt(3);
+	        		 
+       			 if(slot1Rune == 1)
+       			 {
+       				 allRunes.add("Overheal");
+       			 }
+       			 else if(slot1Rune == 2)
+       			 {
+       				 allRunes.add("Triumph");
+       			 }
+       			 else if(slot1Rune == 3)
+       			 {
+       				 allRunes.add("PresenceOfMind");
+       			 }
+       		 
+       		 	 if(slot2Rune == 1)
+       		 	 {
+       		 		 allRunes.add("LegendAlacrity");
+       		 	 }
+       		 	 else if(slot2Rune == 2)
+       		 	 {
+       		 		 allRunes.add("LegendTenacity");
+       		 	 }
+       		 	 else if(slot2Rune == 3)
+       		 	 {
+       		 		 allRunes.add("LegendBloodline");
+       		 	 }
+       		 
+       		 	 if(slot3Rune == 1)
+       		 	 {
+       		 		 allRunes.add("CoupDeGrace");
+       		 	 }
+       		 	 else if(slot3Rune == 2)
+       		 	 {
+       		 		 allRunes.add("CutDown");
+       		 	 }
+       		 	 else if(slot3Rune == 3)
+       		 	 {
+       		 		 allRunes.add("LastStand");
+       		 	 }
+       		 }
+       		 
+       		 else
+       		 {
+       			 int slot4RuneRow = randomNum.nextInt(3);
+       			 int rune = randomNum.nextInt(3);
+	        		 //int slot5RuneRow = randomNum.nextInt(3);//Need to edit these
+       			 
+       			 if (slot4RuneRow == 1)
+       			 {
+       				 if(rune == 1)
+	        			 {
+	        				 allRunes.add("Overheal");
+	        			 }
+	        			 else if(rune == 2)
+	        			 {
+	        				 allRunes.add("Triumph");
+	        			 }
+	        			 else if(rune == 3)
+	        			 {
+	        				 allRunes.add("PresenceOfMind");
+	        			 }
+       			 }
+       			 else if (slot4RuneRow == 2)
+       			 {
+       				 if(rune == 1)
+	        		 	 {
+	        		 		 allRunes.add("LegendAlacrity");
+	        		 	 }
+	        		 	 else if(rune == 2)
+	        		 	 {
+	        		 		 allRunes.add("LegendTenacity");
+	        		 	 }
+	        		 	 else if(rune == 3)
+	        		 	 {
+	        		 		 allRunes.add("LegendBloodline");
+	        		 	 }
+       			 }
+       			 else if (slot4RuneRow == 3)
+       			 {
+       				 if(rune == 1)
+	        		 	 {
+	        		 		 allRunes.add("CoupDeGrace");
+	        		 	 }
+	        		 	 else if(rune == 2)
+	        		 	 {
+	        		 		 allRunes.add("CutDown");
+	        		 	 }
+	        		 	 else if(rune == 3)
+	        		 	 {
+	        		 		 allRunes.add("LastStand");
+	        		 	 }
+       			 }
+       			 
+       			 return allRunes;
+       		 }
+       		 
+       		 break;
 	        
 	        case 2:  allRunes.add("Sorcery");
 	        
@@ -367,12 +534,12 @@ public class Panel extends JPanel
 	              
 	        case 3:  allRunes.add("Resolve");
 	        
-	       		 ArrayList<String> ResolveKeystones = new ArrayList<>();
-	       		 ResolveKeystones.add("GraspOfTheUndying");
-	       		 ResolveKeystones.add("Aftershock");
-	       		 ResolveKeystones.add("Guardian");
-	       		 allRunes.add(ResolveKeystones.get(randomNum.nextInt(ResolveKeystones.size())));
-	       		 break;
+	       		 	 ArrayList<String> ResolveKeystones = new ArrayList<>();
+	       		 	 ResolveKeystones.add("GraspOfTheUndying");
+	       		 	 ResolveKeystones.add("Aftershock");
+	       		 	 ResolveKeystones.add("Guardian");
+	       		 	 allRunes.add(ResolveKeystones.get(randomNum.nextInt(ResolveKeystones.size())));
+	       		 	 break;
 	       			 
 	        case 4:  allRunes.add("Inspiration");
 	                 
@@ -387,10 +554,10 @@ public class Panel extends JPanel
 	        
 	        		 allRunes.add("InvalidKeystone");
 	        		 break;
+	        		 */
 			}
-			
-			return allRunes;
 		}
+		return allRunes;
 	}
 	
 	private void setupListeners()
