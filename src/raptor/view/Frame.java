@@ -2,6 +2,8 @@ package raptor.view;
 
 import raptor.controller.Controller;
 
+import java.awt.Color;
+
 import javax.swing.JFrame;
 
 public class Frame extends JFrame
@@ -20,6 +22,7 @@ public class Frame extends JFrame
 	
 	private void setupFrame()
 	{
+		appPanel.setBackground(new Color(20, 23, 63));
 		this.setContentPane(appPanel);
 		this.setTitle("Raptor Randomizer");
 		this.setResizable(false);

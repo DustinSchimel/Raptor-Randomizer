@@ -45,13 +45,16 @@ public class Panel extends JPanel
 	public Panel(Controller appController)
 	{
 		super();
+		
 		this.appController = appController;
 		appLayout = new SpringLayout();
 		
 		nameLabel = new JLabel("Name", SwingConstants.CENTER);
+		nameLabel.setForeground(Color.WHITE);
 		nameLabel.setFont(new Font("Serif", Font.PLAIN, 20));
 		
 		titleLabel = new JLabel("Title", SwingConstants.CENTER);
+		titleLabel.setForeground(Color.WHITE);
 		titleLabel.setFont(new Font("Serif", Font.PLAIN, 20));
 		
 		championPicLabel = new JLabel("");
@@ -128,7 +131,6 @@ public class Panel extends JPanel
 	
 	private void setupPanel()
 	{
-		this.setBackground(new Color(220, 20, 60));
 		this.setLayout(appLayout);
 		
 		this.add(nameLabel);
@@ -138,7 +140,7 @@ public class Panel extends JPanel
 		this.add(summonerSpell1);
 		this.add(summonerSpell2);
 		
-		this.add(runesKeystone);
+		this.add(runesKeystone);		//testing
 		this.add(runes1Slot1); 			//Testing
 		this.add(runes1Slot2); 			//Testing
 		this.add(runes1Slot3); 			//Testing
@@ -207,7 +209,7 @@ public class Panel extends JPanel
 	{
 		Champion currentChampion = randomizeChampion();
 		ArrayList<String> summonerSpells = randomizeSummonerSpells();
-		//ArrayList<String> runes = randomizeRunes();
+		ArrayList<String> runes = randomizeRunes();
 		
 		
 		nameLabel.setText(currentChampion.getName());
@@ -222,23 +224,23 @@ public class Panel extends JPanel
 		summonerSpell2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/spells/" 
 							     + summonerSpells.get(summonerSpells.size() - 1) + "Picture.png")));
 		
-		//runesKeystone.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
-		//		   			     + runes.get(1) + "Picture.png")));
+		runesKeystone.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
+				   			     + runes.get(0) + "Picture.png")));
 		
-		//runes1Slot1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/"
-		//						 + runes.get(2) + "Picture.png")));	//Change as runes are added
+		runes1Slot1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/"
+								 + runes.get(1) + "Picture.png")));	//Change as runes are added
 		
-		//runes1Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
-		//						 + runes.get(3) + "Picture.png")));	//Change as runes are added
+		runes1Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
+								 + runes.get(2) + "Picture.png")));	//Change as runes are added
 		
-		//runes1Slot3.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
-		//					 	 + runes.get(4) + "Picture.png")));  //Change as runes are added
+		runes1Slot3.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
+							 	 + runes.get(3) + "Picture.png")));  //Change as runes are added
 		
-		//runes2Slot1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
-		//						 + runes.get(5) + "Picture.png")));  //Change as runes are added
+		runes2Slot1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
+								 + runes.get(4) + "Picture.png")));  //Change as runes are added
 		
 		//runes2Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
-		//						 + runes.get(6) + "Picture.png")));  //Change as runes are added
+		//						 + runes.get(5) + "Picture.png")));  //Change as runes are added
 	}
 	
 	private Champion randomizeChampion()
@@ -268,6 +270,156 @@ public class Panel extends JPanel
 		}
 		
 		return currentSummonerSpellList;
+	}
+	
+	private ArrayList<String> randomizeRunes()
+	{
+		ArrayList<String> allRunes = new ArrayList<String>();
+		Random randomNum = new Random();
+		
+		int runesPathIndex = randomNum.nextInt(5);
+		int secondPathIndex = -1;
+		//int secondPathIndex = appController.getRandomWithExclusion(randomNum, 0, 4, runesPathIndex);
+		
+		if(runesPathIndex == 0)
+		{
+			secondPathIndex = randomNum.nextInt(4) + 1;
+		}
+		else if(runesPathIndex == 1)
+		{
+			int randomNumberList[] = {0,2,3,4};
+			secondPathIndex = randomNum.nextInt(4) + 1;
+		}
+		else if(runesPathIndex == 2)
+		{
+			int randomNumberList[] = {0,1,3,4};
+		}
+		else if(runesPathIndex == 3)
+		{
+			int randomNumberList[] = {0,1,2,4};
+		}
+		else if(runesPathIndex == 4)
+		{
+			secondPathIndex = randomNum.nextInt(4);
+		}
+		
+		String keystonePath;
+		String secondPath;
+		
+		if(runesPathIndex == 0)
+		{
+			keystonePath = "Precision";
+		}
+		else if(runesPathIndex == 1)
+		{
+			keystonePath = "Domination";
+		}
+		else if(runesPathIndex == 2)
+		{
+			keystonePath = "Sorcery";
+		}
+		else if(runesPathIndex == 3)
+		{
+			keystonePath = "Resolve";
+		}
+		else if(runesPathIndex == 4)
+		{
+			keystonePath = "Inspiration";
+		}
+		else
+		{
+			keystonePath = "";
+		}
+		
+		if(secondPathIndex == 0)
+		{
+			secondPath = "Precision";
+		}
+		else if(secondPathIndex == 1)
+		{
+			secondPath = "Domination";
+		}
+		else if(secondPathIndex == 2)
+		{
+			secondPath = "Sorcery";
+		}
+		else if(secondPathIndex == 3)
+		{
+			secondPath = "Resolve";
+		}
+		else if(secondPathIndex == 4)
+		{
+			secondPath = "Inspiration";
+		}
+		else
+		{
+			secondPath = "";
+		}
+		
+		allRunes.add(appController.getSpecificList(keystonePath)	//Adds the keystone to the list
+				.get(randomNum.nextInt(3)));
+		
+		
+		if (keystonePath.equals("Resolve"))
+		{
+			allRunes.add(appController.getSpecificList(keystonePath)
+					.get(randomNum.nextInt(3) + 3));
+			
+			allRunes.add(appController.getSpecificList(keystonePath)
+					.get(randomNum.nextInt(4) + 6));
+			
+			allRunes.add(appController.getSpecificList(keystonePath)
+					.get(randomNum.nextInt(3) + 10));
+		}
+		else
+		{
+			for (int index = 0, addition = 3; index < 3; index++, addition = addition + 3)
+			{
+				allRunes.add(appController.getSpecificList(keystonePath)
+						.get(randomNum.nextInt(3) + addition));
+			}
+		}
+		
+		int randomRow = randomNum.nextInt(3);
+		
+		if (secondPath.equals("Resolve"))
+		{
+			if (randomRow == 0)
+			{
+				allRunes.add(appController.getSpecificList(keystonePath)
+						.get(randomNum.nextInt(3) + 3));
+			}
+			else if (randomRow == 1)
+			{
+				allRunes.add(appController.getSpecificList(secondPath)
+						.get(randomNum.nextInt(3) + 6));
+			}
+			else if (randomRow == 2)
+			{
+				allRunes.add(appController.getSpecificList(secondPath)
+						.get(randomNum.nextInt(3) + 10));
+			}
+		}
+		else
+		{
+			if (randomRow == 0)
+			{
+				allRunes.add(appController.getSpecificList(secondPath)
+						.get(randomNum.nextInt(3) + 3));
+			}
+			else if (randomRow == 1)
+			{
+				allRunes.add(appController.getSpecificList(secondPath)
+						.get(randomNum.nextInt(3) + 6));
+			}
+			else if (randomRow == 2)
+			{
+				allRunes.add(appController.getSpecificList(secondPath)
+						.get(randomNum.nextInt(3) + 9));
+			}
+		}
+		
+		return allRunes;
 	}
 	
 	/*

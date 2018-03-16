@@ -4,7 +4,7 @@ import raptor.model.*;
 import raptor.view.Frame;
 
 import java.util.List;
-
+import java.util.Random;
 import java.awt.Image;
 import java.awt.Toolkit;
 import java.util.ArrayList;
@@ -233,34 +233,76 @@ public class Controller
 		return summonerSpellList;
 	}
 	
-	public List<String> getPrecisionRunesList()
-	{
-		return precisionRunesList;
-	}
+	//public List<String> getPrecisionRunesList()
+	//{
+	//	return precisionRunesList;
+	//}
 	
-	public List<String> getDominationRunesList()
-	{
-		return dominationRunesList;
-	}
+	//public List<String> getDominationRunesList()
+	//{
+	//	return dominationRunesList;
+	//}
 	
-	public List<String> getSorceryRunesList()
-	{
-		return sorceryRunesList;
-	}
+	//public List<String> getSorceryRunesList()
+	//{
+	//	return sorceryRunesList;
+	//}
 	
-	public List<String> getResolveRunesList()
-	{
-		return resolveRunesList;
-	}
+	//public List<String> getResolveRunesList()
+	//{
+	//	return resolveRunesList;
+	//}
 	
-	public List<String> getInspirationRunesList()
-	{
-		return inspirationRunesList;
-	}
+	//public List<String> getInspirationRunesList()
+	//{
+	//	return inspirationRunesList;
+	//}
 	
 	public List<List> getRunesList()
 	{
 		return runesList;
+	}
+	
+	public List<String> getSpecificList(String keystonePath)
+	{
+		if (keystonePath.equals("Precision"))
+		{
+			return precisionRunesList;
+		}
+		else if (keystonePath.equals("Domination"))
+		{
+			return dominationRunesList;
+		}
+		else if (keystonePath.equals("Sorcery"))
+		{
+			return sorceryRunesList;
+		}
+		else if (keystonePath.equals("Resolve"))
+		{
+			return resolveRunesList;
+		}
+		else if (keystonePath.equals("Inspiration"))
+		{
+			return inspirationRunesList;
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	public int getRandomWithExclusion(Random rnd, int start, int end, int... exclude) 
+	{
+	    int random = start + rnd.nextInt(end - start + 1 - exclude.length);
+	    for (int ex : exclude) 
+	    {
+	        if (random < ex) 
+	        {
+	            break;
+	        }
+	        random++;
+	    }
+	    return random;
 	}
 	
 	public void start()
