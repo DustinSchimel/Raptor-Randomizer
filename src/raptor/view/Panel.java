@@ -278,83 +278,41 @@ public class Panel extends JPanel
 		Random randomNum = new Random();
 		
 		int runesPathIndex = randomNum.nextInt(5);
-		int secondPathIndex = -1;
-		//int secondPathIndex = appController.getRandomWithExclusion(randomNum, 0, 4, runesPathIndex);
-		
-		if(runesPathIndex == 0)
-		{
-			secondPathIndex = randomNum.nextInt(4) + 1;
-		}
-		else if(runesPathIndex == 1)
-		{
-			int randomNumberList[] = {0,2,3,4};
-			secondPathIndex = randomNum.nextInt(4) + 1;
-		}
-		else if(runesPathIndex == 2)
-		{
-			int randomNumberList[] = {0,1,3,4};
-		}
-		else if(runesPathIndex == 3)
-		{
-			int randomNumberList[] = {0,1,2,4};
-		}
-		else if(runesPathIndex == 4)
-		{
-			secondPathIndex = randomNum.nextInt(4);
-		}
-		
 		String keystonePath;
 		String secondPath;
+		
 		
 		if(runesPathIndex == 0)
 		{
 			keystonePath = "Precision";
+			secondPath = appController.getSpecificListWithout("Precision").get(randomNum.nextInt(4));
 		}
 		else if(runesPathIndex == 1)
 		{
 			keystonePath = "Domination";
+			secondPath = appController.getSpecificListWithout("Domination").get(randomNum.nextInt(4));
 		}
 		else if(runesPathIndex == 2)
 		{
 			keystonePath = "Sorcery";
+			secondPath = appController.getSpecificListWithout("Sorcery").get(randomNum.nextInt(4));
 		}
 		else if(runesPathIndex == 3)
 		{
 			keystonePath = "Resolve";
+			secondPath = appController.getSpecificListWithout("Resolve").get(randomNum.nextInt(4));
 		}
 		else if(runesPathIndex == 4)
 		{
 			keystonePath = "Inspiration";
+			secondPath = appController.getSpecificListWithout("Inspiration").get(randomNum.nextInt(4));
 		}
 		else
 		{
 			keystonePath = "";
-		}
-		
-		if(secondPathIndex == 0)
-		{
-			secondPath = "Precision";
-		}
-		else if(secondPathIndex == 1)
-		{
-			secondPath = "Domination";
-		}
-		else if(secondPathIndex == 2)
-		{
-			secondPath = "Sorcery";
-		}
-		else if(secondPathIndex == 3)
-		{
-			secondPath = "Resolve";
-		}
-		else if(secondPathIndex == 4)
-		{
-			secondPath = "Inspiration";
-		}
-		else
-		{
 			secondPath = "";
 		}
+		
 		
 		allRunes.add(appController.getSpecificList(keystonePath)	//Adds the keystone to the list
 				.get(randomNum.nextInt(3)));
@@ -417,6 +375,7 @@ public class Panel extends JPanel
 				allRunes.add(appController.getSpecificList(secondPath)
 						.get(randomNum.nextInt(3) + 9));
 			}
+			
 		}
 		
 		return allRunes;

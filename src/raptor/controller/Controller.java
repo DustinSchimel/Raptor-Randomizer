@@ -18,7 +18,11 @@ public class Controller
 	private List<String> sorceryRunesList;
 	private List<String> resolveRunesList;
 	private List<String> inspirationRunesList;
-	private List<List> runesList;
+	private List<String> runesWithoutPrecision;
+	private List<String> runesWithoutDomination;
+	private List<String> runesWithoutSorcery;
+	private List<String> runesWithoutResolve;
+	private List<String> runesWithoutInspiration;
 	private Frame appFrame;
 	
 	public Controller()
@@ -30,7 +34,11 @@ public class Controller
 		sorceryRunesList = new ArrayList<String>();
 		resolveRunesList = new ArrayList<String>();
 		inspirationRunesList = new ArrayList<String>();
-		runesList = new ArrayList<List>();
+		runesWithoutPrecision = new ArrayList<String>();
+		runesWithoutDomination = new ArrayList<String>();
+		runesWithoutSorcery = new ArrayList<String>();
+		runesWithoutResolve = new ArrayList<String>();
+		runesWithoutInspiration = new ArrayList<String>();
 		appFrame = new Frame(this);
 		
 		buildChampionList();
@@ -40,7 +48,11 @@ public class Controller
 		buildSorceryList();
 		buildResolveList();
 		buildInspirationList();
-		buildRunesList();
+		buildRunesWithoutPrecision();
+		buildRunesWithoutDomination();
+		buildRunesWithoutSorcery();
+		buildRunesWithoutResolve();
+		buildRunesWithoutInspiration();
 		
 		//Image icon = Toolkit.getDefaultToolkit().getImage("/raptor/view/images/AppIcon.png");
 	    //appFrame.setIconImage(icon);        Trying to get this to work
@@ -202,13 +214,44 @@ public class Controller
 		inspirationRunesList.add("TimeWarpTonic");
 	}
 	
-	public void buildRunesList()
+	public void buildRunesWithoutPrecision()
 	{
-		runesList.add(precisionRunesList);
-		runesList.add(dominationRunesList);
-		runesList.add(sorceryRunesList);
-		runesList.add(resolveRunesList);
-		runesList.add(inspirationRunesList);
+		runesWithoutPrecision.add("Domination");
+		runesWithoutPrecision.add("Sorcery");
+		runesWithoutPrecision.add("Resolve");
+		runesWithoutPrecision.add("Inspiration");
+	}
+	
+	public void buildRunesWithoutDomination()
+	{
+		runesWithoutPrecision.add("Precision");
+		runesWithoutPrecision.add("Sorcery");
+		runesWithoutPrecision.add("Resolve");
+		runesWithoutPrecision.add("Inspiration");
+	}
+	
+	public void buildRunesWithoutSorcery()
+	{
+		runesWithoutPrecision.add("Precision");
+		runesWithoutPrecision.add("Domination");
+		runesWithoutPrecision.add("Resolve");
+		runesWithoutPrecision.add("Inspiration");
+	}
+	
+	public void buildRunesWithoutResolve()
+	{
+		runesWithoutPrecision.add("Precision");
+		runesWithoutPrecision.add("Domination");
+		runesWithoutPrecision.add("Sorcery");
+		runesWithoutPrecision.add("Inspiration");
+	}
+	
+	public void buildRunesWithoutInspiration()
+	{
+		runesWithoutPrecision.add("Precision");
+		runesWithoutPrecision.add("Domination");
+		runesWithoutPrecision.add("Sorcery");
+		runesWithoutPrecision.add("Resolve");
 	}
 	
 	public String [] convertChampionList()
@@ -233,36 +276,6 @@ public class Controller
 		return summonerSpellList;
 	}
 	
-	//public List<String> getPrecisionRunesList()
-	//{
-	//	return precisionRunesList;
-	//}
-	
-	//public List<String> getDominationRunesList()
-	//{
-	//	return dominationRunesList;
-	//}
-	
-	//public List<String> getSorceryRunesList()
-	//{
-	//	return sorceryRunesList;
-	//}
-	
-	//public List<String> getResolveRunesList()
-	//{
-	//	return resolveRunesList;
-	//}
-	
-	//public List<String> getInspirationRunesList()
-	//{
-	//	return inspirationRunesList;
-	//}
-	
-	public List<List> getRunesList()
-	{
-		return runesList;
-	}
-	
 	public List<String> getSpecificList(String keystonePath)
 	{
 		if (keystonePath.equals("Precision"))
@@ -284,6 +297,34 @@ public class Controller
 		else if (keystonePath.equals("Inspiration"))
 		{
 			return inspirationRunesList;
+		}
+		else
+		{
+			return null;
+		}
+	}
+	
+	public List<String> getSpecificListWithout(String keystonePath)
+	{
+		if (keystonePath.equals("Precision"))
+		{
+			return runesWithoutPrecision;
+		}
+		else if (keystonePath.equals("Domination"))
+		{
+			return runesWithoutDomination;
+		}
+		else if (keystonePath.equals("Sorcery"))
+		{
+			return runesWithoutSorcery;
+		}
+		else if (keystonePath.equals("Resolve"))
+		{
+			return runesWithoutResolve;
+		}
+		else if (keystonePath.equals("Inspiration"))
+		{
+			return runesWithoutInspiration;
 		}
 		else
 		{
