@@ -227,19 +227,19 @@ public class Panel extends JPanel
 				   			     + runes.get(0) + "Picture.png")));
 		
 		runes1Slot1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/"
-								 + runes.get(1) + "Picture.png")));	//Change as runes are added
+								 + runes.get(1) + "Picture.png")));
 		
 		runes1Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
-								 + runes.get(2) + "Picture.png")));	//Change as runes are added
+								 + runes.get(2) + "Picture.png")));
 		
 		runes1Slot3.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
-							 	 + runes.get(3) + "Picture.png")));  //Change as runes are added
+							 	 + runes.get(3) + "Picture.png")));
 		
 		runes2Slot1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
-								 + runes.get(4) + "Picture.png")));  //Change as runes are added
+								 + runes.get(4) + "Picture.png")));
 		
-		//runes2Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
-		//						 + runes.get(5) + "Picture.png")));  //Change as runes are added
+		runes2Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
+								 + runes.get(5) + "Picture.png")));
 	}
 	
 	private Champion randomizeChampion()
@@ -337,6 +337,7 @@ public class Panel extends JPanel
 		}
 		
 		int randomRow = randomNum.nextInt(3);
+		int randomNextRow = randomNum.nextInt(2);
 		
 		if (secondPath.equals("Resolve"))
 		{
@@ -344,16 +345,49 @@ public class Panel extends JPanel
 			{
 				allRunes.add(appController.getSpecificList(secondPath)
 						.get(randomNum.nextInt(3) + 3));
+				
+				if (randomNextRow == 0)
+				{
+					allRunes.add(appController.getSpecificList(secondPath)
+							.get(randomNum.nextInt(3) + 6));
+				}
+				else if (randomNextRow == 1)
+				{
+					allRunes.add(appController.getSpecificList(secondPath)
+							.get(randomNum.nextInt(3) + 10));
+				}
 			}
 			else if (randomRow == 1)
 			{
 				allRunes.add(appController.getSpecificList(secondPath)
 						.get(randomNum.nextInt(3) + 6));
+				
+				if (randomNextRow == 0)
+				{
+					allRunes.add(appController.getSpecificList(secondPath)
+							.get(randomNum.nextInt(3) + 3));
+				}
+				else if (randomNextRow == 1)
+				{
+					allRunes.add(appController.getSpecificList(secondPath)
+							.get(randomNum.nextInt(3) + 10));
+				}
 			}
 			else if (randomRow == 2)
 			{
 				allRunes.add(appController.getSpecificList(secondPath)
 						.get(randomNum.nextInt(3) + 10));
+				
+				if (randomNextRow == 0)
+				{
+					allRunes.add(appController.getSpecificList(secondPath)
+							.get(randomNum.nextInt(3) + 3));
+				}
+				else if (randomNextRow == 1)
+				{
+					allRunes.add(appController.getSpecificList(secondPath)
+							.get(randomNum.nextInt(3) + 6));
+				}
 			}
 		}
 		else
@@ -362,734 +396,55 @@ public class Panel extends JPanel
 			{
 				allRunes.add(appController.getSpecificList(secondPath)
 						.get(randomNum.nextInt(3) + 3));
+				
+				if (randomNextRow == 0)
+				{
+					allRunes.add(appController.getSpecificList(secondPath)
+							.get(randomNum.nextInt(3) + 6));
+				}
+				else if (randomNextRow == 1)
+				{
+					allRunes.add(appController.getSpecificList(secondPath)
+							.get(randomNum.nextInt(3) + 9));
+				}
 			}
 			else if (randomRow == 1)
 			{
 				allRunes.add(appController.getSpecificList(secondPath)
 						.get(randomNum.nextInt(3) + 6));
+				
+				if (randomNextRow == 0)
+				{
+					allRunes.add(appController.getSpecificList(secondPath)
+							.get(randomNum.nextInt(3) + 3));
+				}
+				else if (randomNextRow == 1)
+				{
+					allRunes.add(appController.getSpecificList(secondPath)
+							.get(randomNum.nextInt(3) + 9));
+				}
 			}
 			else if (randomRow == 2)
 			{
 				allRunes.add(appController.getSpecificList(secondPath)
 						.get(randomNum.nextInt(3) + 9));
+				
+				if (randomNextRow == 0)
+				{
+					allRunes.add(appController.getSpecificList(secondPath)
+							.get(randomNum.nextInt(3) + 3));
+				}
+				else if (randomNextRow == 1)
+				{
+					allRunes.add(appController.getSpecificList(secondPath)
+							.get(randomNum.nextInt(3) + 6));
+				}
 			}
 			
 		}
 		
 		return allRunes;
 	}
-	
-	/*
-	private ArrayList<String> randomizeRunes()
-	{
-		ArrayList<String> allRunes = new ArrayList<String>();
-		Random randomNum = new Random();
-		
-		int keystonePath = 0;
-		
-		boolean choosingRunes = true;
-		boolean pickingSlot4and5 = false;
-		
-		while (choosingRunes == true)
-		{
-			int runesPath = randomNum.nextInt(5);	//Need to update as more paths are added
-			
-			if(pickingSlot4and5 == true && runesPath == keystonePath)
-			{
-				runesPath = randomNum.nextInt(5);
-			}
-			
-			switch (runesPath)			//Picks the main rune path as well as the keystone and minor runes for that path
-			{
-	        case 0:  
-	        	
-    		if (pickingSlot4and5 == false)
-    		{	
-    			allRunes.add("Precision");
-    			keystonePath = 0;
-    		        
-        		ArrayList<String> PrecisionKeystones = new ArrayList<>();
-        		PrecisionKeystones.add("PressTheAttack");
-        		PrecisionKeystones.add("LethalTempo");
-        		PrecisionKeystones.add("FleetFootwork");
-        		allRunes.add(PrecisionKeystones.get(randomNum.nextInt(PrecisionKeystones.size())));
-        		 
-        		int slot1Rune = randomNum.nextInt(3);
-        		int slot2Rune = randomNum.nextInt(3);
-        		int slot3Rune = randomNum.nextInt(3);
-        		 
-    			if(slot1Rune == 0)
-    			{
-    				allRunes.add("Overheal");
-    			}
-    			else if(slot1Rune == 1)
-    			{
-    				allRunes.add("Triumph");
-    			}
-    			else if(slot1Rune == 2)
-    			{
-    				allRunes.add("PresenceOfMind");
-    			}
-    		 
-    		 	if(slot2Rune == 0)
-    		 	{
-    		 		allRunes.add("LegendAlacrity");
-    		 	}
-    		 	else if(slot2Rune == 1)
-    		 	{
-    		 		allRunes.add("LegendTenacity");
-    		 	}
-    		 	else if(slot2Rune == 2)
-    		 	{
-    		 		allRunes.add("LegendBloodline");
-    		 	}
-    		 
-    		 	if(slot3Rune == 0)
-    		 	{
-    		 		allRunes.add("CoupDeGrace");
-    		 	}
-    		 	else if(slot3Rune == 1)
-    		 	{
-    		 		allRunes.add("CutDown");
-    		 	}
-    		 	else if(slot3Rune == 2)
-    		 	{
-    		 		allRunes.add("LastStand");
-    		 	}
-    		 	 
-    		 	pickingSlot4and5 = true;
-    		 }
-    		 
-    		 else
-    		 {
-    			int firstRow = 0;
-    			int loop = 0;
-    			 
-    			for(int index = 0; index < 2; index++)
-    			{ 
-    				int runeRow = randomNum.nextInt(3);
-    				int rune = randomNum.nextInt(3);				 
-    				 
-    				while (loop == 1 && runeRow == firstRow)
-    				{
-    					runeRow = randomNum.nextInt(3);
-    				}
-    				
-    				loop++;
-    				 
-        			if (runeRow == 0)
-        			{
-        				firstRow = 0;
-        				 
-        				if(rune == 0)
-	        			{
-	        				allRunes.add("Overheal");
-	        			}
-	        			else if(rune == 1)
-	        			{
-	        				allRunes.add("Triumph");
-	        			}
-	        			else if(rune == 2)
-	        			{
-	        				allRunes.add("PresenceOfMind");
-	        			}
-        			}
-        			else if (runeRow == 1)
-        			{
-        				firstRow = 1;
-        				 
-        				if(rune == 0)
-	        		 	{
-	        		 		allRunes.add("LegendAlacrity");
-	        		 	}
-	        		 	else if(rune == 1)
-	        		 	{
-	        		 		allRunes.add("LegendTenacity");
-	        		 	}
-	        		 	else if(rune == 2)
-	        		 	{
-	        		 		allRunes.add("LegendBloodline");
-	        		 	}
-        			}
-        			else if (runeRow == 2)
-        			{
-        				firstRow = 2;
-        				 
-        				if(rune == 0)
-	        		 	{
-	        		 		allRunes.add("CoupDeGrace");
-	        		 	}
-	        		 	else if(rune == 1)
-	        		 	{
-	        		 		allRunes.add("CutDown");
-	        		 	}
-	        		 	else if(rune == 2)
-	        		 	{
-	        		 		allRunes.add("LastStand");
-	        		 	}
-        			}
-    			}
-    			 
-    			choosingRunes = false;
-    		}
-    		break;
-	        		 
-	        case 1:  
-	        	
-       		if (pickingSlot4and5 == false)
-       		{
-       			allRunes.add("Domination");
-   			 	keystonePath = 1;
-   		        
-        		ArrayList<String> DominationKeystones = new ArrayList<>();
-        		DominationKeystones.add("Electrocute");
-        		DominationKeystones.add("Predator");
-        		DominationKeystones.add("DarkHarvest");
-        		allRunes.add(DominationKeystones.get(randomNum.nextInt(DominationKeystones.size())));
-        		 
-        		int slot1Rune = randomNum.nextInt(3);
-        		int slot2Rune = randomNum.nextInt(3);
-        		int slot3Rune = randomNum.nextInt(3);
-        		 
-       			if(slot1Rune == 0)
-       			{
-       				allRunes.add("CheapShot");
-       			}
-       			else if(slot1Rune == 1)
-       			{
-       				allRunes.add("TasteOfBlood");
-       			}
-       			else if(slot1Rune == 2)
-       			{
-       				allRunes.add("SuddenImpact");
-       			}
-       		 
-       		 	if(slot2Rune == 0)
-       		 	{
-       		 		allRunes.add("ZombieWard");
-       		 	}
-       		 	else if(slot2Rune == 1)
-       		 	{
-       		 		allRunes.add("GhostPoro");
-       		 	}
-       		 	else if(slot2Rune == 2)
-       		 	{
-       		 		allRunes.add("EyeballCollection");
-       		 	}
-       		 
-       		 	if(slot3Rune == 0)
-       		 	{
-       		 		allRunes.add("RavenousHunter");
-       		 	}
-       		 	else if(slot3Rune == 1)
-       		 	{
-       		 		allRunes.add("IngeniousHunter");
-       		 	}
-       		 	else if(slot3Rune == 2)
-       		 	{
-       		 		allRunes.add("Relentless Hunter");
-       		 	}
-       		 	 
-       		 	pickingSlot4and5 = true;
-       		 }
-       		 
-       		 else
-       		 {
-       			int firstRow = 0;
-       			int loop = 0;
-       			 
-       			for(int index = 0; index < 2; index++)
-       			{ 
-       				int runeRow = randomNum.nextInt(3);
-       				int rune = randomNum.nextInt(3);	
-       				 
-       				while (loop == 1 && runeRow == firstRow)
-       				{
-       					runeRow = randomNum.nextInt(3);
-       				}
-       				
-       				loop++;
-       				 
-        			if (runeRow == 0)
-        			{
-        				firstRow = 0;
-        				 
-        				if(rune == 0)
-	        			{
-	        				allRunes.add("CheapShot");
-	        			}
-	        			else if(rune == 1)
-	        			{
-	        				allRunes.add("TasteOfBlood");
-	        			}
-	        			else if(rune == 2)
-	        			{
-	        				allRunes.add("SuddenImpact");
-	        			}
-        			}
-        			else if (runeRow == 1)
-        			{
-        				firstRow = 1;
-        				 
-        				if(rune == 0)
-	        		 	{
-	        		 		allRunes.add("ZombieWard");
-	        		 	}
-	        		 	else if(rune == 1)
-	        		 	{
-	        		 		allRunes.add("GhostPoro");
-	        		 	}
-	        		 	else if(rune == 2)
-	        		 	{
-	        		 		allRunes.add("EyeballCollection");
-	        		 	}
-        			}
-        			else if (runeRow == 2)
-        			{
-        				firstRow = 2;
-        				 
-        				if(rune == 0)
-	        		 	{
-	        		 		allRunes.add("RavenousHunter");
-	        		 	}
-	        		 	else if(rune == 1)
-	        		 	{
-	        		 		allRunes.add("IngeniousHunter");
-	        		 	}
-	        		 	else if(rune == 2)
-	        		 	{
-	        		 		allRunes.add("RelentlessHunter");
-	        		 	}
-        			}
-       			}
-       			 
-       			choosingRunes = false;
-       		}
-       		 
-       		break;
-	        
-	        case 2:  
-	        	
-        	if (pickingSlot4and5 == false)
-       		{
-        		allRunes.add("Sorcery");
-       			keystonePath = 2;
-       		        
-        		ArrayList<String> SorceryKeystones = new ArrayList<>();
-        		SorceryKeystones.add("SummonAery");
-        		SorceryKeystones.add("ArcaneComet");
-        		SorceryKeystones.add("PhaseRush");
-        		allRunes.add(SorceryKeystones.get(randomNum.nextInt(SorceryKeystones.size())));
-        		 
-        		int slot1Rune = randomNum.nextInt(3);
-        		int slot2Rune = randomNum.nextInt(3);
-        		int slot3Rune = randomNum.nextInt(3);
-        		 
-       			if(slot1Rune == 0)
-       			{
-       				allRunes.add("NullifyingOrb");
-       			}
-       			else if(slot1Rune == 1)
-       			{
-       				allRunes.add("ManaflowBand");
-       			}
-       			else if(slot1Rune == 2)
-       			{
-       				allRunes.add("TheUltimateHat");
-       			}
-       		 
-       		 	if(slot2Rune == 0)
-       		 	{
-       		 		allRunes.add("Transcendence");
-       		 	}
-       		 	else if(slot2Rune == 1)
-       		 	{
-       		 		allRunes.add("Celerity");
-       		 	}
-       		 	else if(slot2Rune == 2)
-       		 	{
-       		 		allRunes.add("AbsoluteFocus");
-       		 	}
-       		 
-       		 	if(slot3Rune == 0)
-       		 	{
-       		 		allRunes.add("Scorch");
-       		 	}
-       		 	else if(slot3Rune == 1)
-       		 	{
-       		 		allRunes.add("Waterwalking");
-       		 	}
-       		 	else if(slot3Rune == 2)
-       		 	{
-       		 		allRunes.add("GatheringStorm");
-       		 	}
-       		 	 
-       		 	pickingSlot4and5 = true;
-       		 }
-	       		 
-       		 else
-       		 {
-       			int firstRow = 0;
-       			int loop = 0;
-       			 
-       			for(int index = 0; index < 2; index++)
-       			{ 
-       				int runeRow = randomNum.nextInt(3);
-       				int rune = randomNum.nextInt(3);				 
-       				 
-       				while (loop == 1 && runeRow == firstRow)
-       				{
-       					runeRow = randomNum.nextInt(3);
-       				}
-       				
-       				loop++;
-       				 
-       				if (runeRow == 0)
-	        		{
-       					firstRow = 0;
-        				 
-        				if(rune == 0)
-	        			{
-	        				allRunes.add("NullifyingOrb");
-	        			}
-	        			else if(rune == 1)
-	        			{
-	        				allRunes.add("ManaflowBand");
-	        			}
-	        			else if(rune == 2)
-	        			{
-	        				allRunes.add("TheUltimateHat");
-	        			}
-        			}
-        			else if (runeRow == 1)
-        			{
-        				firstRow = 1;
-        				 
-        				if(rune == 0)
-	        		 	{
-	        		 		allRunes.add("Transcendence");
-	        		 	}
-	        		 	else if(rune == 1)
-	        		 	{
-	        		 		allRunes.add("Celerity");
-	        		 	}
-	        		 	else if(rune == 2)
-	        		 	{
-	        		 		allRunes.add("AbsoluteFocus");
-	        		 	}
-        			}
-        			else if (runeRow == 2)
-        			{
-        				firstRow = 2;
-        				 
-        				if(rune == 0)
-	        		 	{
-	        		 		allRunes.add("Scorch");
-	        		 	}
-	        		 	else if(rune == 1)
-	        		 	{
-	        		 		allRunes.add("Waterwalking");
-	        		 	}
-	        		 	else if(rune == 2)
-	        		 	{
-	        		 		allRunes.add("GatheringStorm");
-	        		 	}
-        			}
-       			}
-       			 
-       			choosingRunes = false;
-       		}
-       		 
-       		break;	 
-	       		 
-	        case 3:  
-	        	
-       		if (pickingSlot4and5 == false)
-       		{
-       			allRunes.add("Resolve");
-       			keystonePath = 3;
-       		        
-        		ArrayList<String> ResolveKeystones = new ArrayList<>();
-        		ResolveKeystones.add("GraspOfTheUndying");
-        		ResolveKeystones.add("Aftershock");
-        		ResolveKeystones.add("Guardian");
-        		allRunes.add(ResolveKeystones.get(randomNum.nextInt(ResolveKeystones.size())));
-        		 
-        		int slot1Rune = randomNum.nextInt(3);
-        		int slot2Rune = randomNum.nextInt(4);
-        		int slot3Rune = randomNum.nextInt(3);
-        		 
-       			if(slot1Rune == 0)
-       			{
-       				allRunes.add("Demolish");
-       			}
-       			else if(slot1Rune == 1)
-       			{
-       				allRunes.add("FontOfLife");
-       			}
-       			else if(slot1Rune == 2)
-       			{
-       				allRunes.add("BonePlating");
-       			}
-       		 
-       		 	if(slot2Rune == 0)
-       		 	{
-       		 		allRunes.add("IronSkin");
-       		 	}
-       		 	else if(slot2Rune == 1)
-       		 	{
-       		 		allRunes.add("MirrorShell");
-       		 	}
-       		 	else if(slot2Rune == 2)
-       		 	{
-       		 		allRunes.add("Conditioning");
-       		 	}
-       		 	else if(slot2Rune == 3)
-       		 	{
-       		 		allRunes.add("SecondWind");
-       		 	}
-       		 
-       		 	if(slot3Rune == 0)
-       		 	{
-       		 		allRunes.add("Overgrowth");
-       		 	}
-       		 	else if(slot3Rune == 1)
-       		 	{
-       		 		allRunes.add("Revitalize");
-       		 	}
-       		 	else if(slot3Rune == 2)
-       		 	{
-       		 		allRunes.add("Unflinching");
-       		 	}
-       		 	 
-       		 	pickingSlot4and5 = true;
-       		}
-	       		 
-       		else
-       		{
-       			int firstRow = 0;
-       			int loop = 0;
-       			 
-       			for(int index = 0; index < 2; index++)
-       			{ 
-       				int runeRow = randomNum.nextInt(3);				 
-       				 
-       				while (loop == 1 && runeRow == firstRow)
-       				{
-       					runeRow = randomNum.nextInt(3);
-       				}
-       				
-       				loop++;
-       				 
-        			if (runeRow == 0)
-        			{
-        				int rune = randomNum.nextInt(3);
-        				firstRow = 0;
-        				 
-        				if(rune == 0)
-	        			{
-	        				allRunes.add("Demolish");
-	        			}
-	        			else if(rune == 1)
-	        			{
-	        				allRunes.add("FontOfLife");
-	        			}
-	        			else if(rune == 2)
-	        			{
-	        				allRunes.add("BonePlating");
-	        			}
-        			}
-        			else if (runeRow == 1)
-        			{
-        				int rune = randomNum.nextInt(4);
-        				firstRow = 1;
-        				 
-        				if(rune == 0)
-	        		 	{
-	        		 		allRunes.add("IronSkin");
-	        		 	}
-	        		 	else if(rune == 1)
-	        		 	{
-	        		 		allRunes.add("MirrorShell");
-	        		 	}
-	        		 	else if(rune == 2)
-	        		 	{
-	        		 		allRunes.add("Conditioning");
-	        		 	}
-	        		 	else if(rune == 3)
-	        		 	{
-	        		 		allRunes.add("SecondWind");
-	        		 	}
-        			}
-        			else if (runeRow == 2)
-        			{
-        				int rune = randomNum.nextInt(3);
-        				firstRow = 2;
-        				 
-        				if(rune == 0)
-	        		 	{
-	        		 		allRunes.add("Overgrowth");
-	        		 	}
-	        		 	else if(rune == 1)
-	        		 	{
-	        		 		allRunes.add("Revitalize");
-	        		 	}
-	        		 	else if(rune == 2)
-	        		 	{
-	        		 		allRunes.add("Unflinching");
-	        		 	}
-        			}
-       			}
-       			 
-       			choosingRunes = false;
-       		
-       		}
-       		 
-       		break;
-	       			 
-	        case 4:  
-	        	
-	       		 if (pickingSlot4and5 == false)
-	       		 {
-	       			 allRunes.add("Inspiration");
-	       			 keystonePath = 4;
-	       		        
-		        		 ArrayList<String> InspirationKeystones = new ArrayList<>();
-		        		 InspirationKeystones.add("UnsealedSpellbook");
-		        		 InspirationKeystones.add("GlacialAugment");
-		        		 InspirationKeystones.add("Kleptomancy");
-		        		 allRunes.add(InspirationKeystones.get(randomNum.nextInt(InspirationKeystones.size())));
-		        		 
-		        		 int slot1Rune = randomNum.nextInt(3);
-		        		 int slot2Rune = randomNum.nextInt(3);
-		        		 int slot3Rune = randomNum.nextInt(3);
-		        		 
-		       			 if(slot1Rune == 0)
-		       			 {
-		       				 allRunes.add("HextechFlashtraption");
-		       			 }
-		       			 else if(slot1Rune == 1)
-		       			 {
-		       				 allRunes.add("MagicalFootwear");
-		       			 }
-		       			 else if(slot1Rune == 2)
-		       			 {
-		       				 allRunes.add("PerfectTiming");
-		       			 }
-		       		 
-		       		 	 if(slot2Rune == 0)
-		       		 	 {
-		       		 		 allRunes.add("FuturesMarket");
-		       		 	 }
-		       		 	 else if(slot2Rune == 1)
-		       		 	 {
-		       		 		 allRunes.add("MinionDematerializer");
-		       		 	 }
-		       		 	 else if(slot2Rune == 2)
-		       		 	 {
-		       		 		 allRunes.add("BiscuitDelivery");
-		       		 	 }
-		       		 
-		       		 	 if(slot3Rune == 0)
-		       		 	 {
-		       		 		 allRunes.add("CosmicInsight");
-		       		 	 }
-		       		 	 else if(slot3Rune == 1)
-		       		 	 {
-		       		 		 allRunes.add("ApproachVelocity");
-		       		 	 }
-		       		 	 else if(slot3Rune == 2)
-		       		 	 {
-		       		 		 allRunes.add("TimeWarpTonic");
-		       		 	 }
-		       		 	 
-		       		 	 pickingSlot4and5 = true;
-		       		 }
-		       		 
-		       		 else
-		       		 {
-		       			 int firstRow = 0;
-		       			 int loop = 0;
-		       			 
-		       			 for(int index = 0; index < 2; index++)
-		       			 { 
-		       				 int rune = randomNum.nextInt(3);
-		       				 int runeRow = randomNum.nextInt(3);				 
-		       				 
-		       				 while (loop == 1 && runeRow == firstRow)
-		       				 {
-		       					 runeRow = randomNum.nextInt(3);
-		       				 }
-		       				 
-		       				 loop++;
-		       				 
-			        			 if (runeRow == 0)
-			        			 {
-			        				 firstRow = 0;
-			        				 
-			        				 if(rune == 0)
-				        			 {
-				        				 allRunes.add("HextechFlashtraption");
-				        			 }
-				        			 else if(rune == 1)
-				        			 {
-				        				 allRunes.add("MagicalFootwear");
-				        			 }
-				        			 else if(rune == 2)
-				        			 {
-				        				 allRunes.add("PerfectTiming");
-				        			 }
-			        			 }
-			        			 else if (runeRow == 1)
-			        			 {
-			        				 firstRow = 1;
-			        				 
-			        				 if(rune == 0)
-				        		 	 {
-				        		 		 allRunes.add("FuturesMarket");
-				        		 	 }
-				        		 	 else if(rune == 1)
-				        		 	 {
-				        		 		 allRunes.add("MinionDematerializer");
-				        		 	 }
-				        		 	 else if(rune == 2)
-				        		 	 {
-				        		 		 allRunes.add("BiscuitDelivery");
-				        		 	 }
-			        			 }
-			        			 else if (runeRow == 2)
-			        			 {
-			        				 firstRow = 2;
-			        				 
-			        				 if(rune == 0)
-				        		 	 {
-				        		 		 allRunes.add("CosmicInsight");
-				        		 	 }
-				        		 	 else if(rune == 1)
-				        		 	 {
-				        		 		 allRunes.add("ApproachVelocity");
-				        		 	 }
-				        		 	 else if(rune == 2)
-				        		 	 {
-				        		 		 allRunes.add("TimeWarpTonic");
-				        		 	 }
-			        			 }
-		       			 }
-		       			 
-		       			 choosingRunes = false;
-		       		 }
-		       		 
-		       		 break;
-	        
-	        default: allRunes.add("InvalidPath");
-	        
-	        		 allRunes.add("InvalidKeystone");
-	        		 break;
-			}
-		}
-		return allRunes;
-	}
-	*/
 	
 	private void setupListeners()
 	{
