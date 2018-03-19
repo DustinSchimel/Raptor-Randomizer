@@ -43,11 +43,13 @@ public class Controller
 		
 		buildChampionList();
 		buildSummonerSpellList();
+		
 		buildPrecisionList();
 		buildDominationList();
 		buildSorceryList();
 		buildResolveList();
 		buildInspirationList();
+		
 		buildRunesWithoutPrecision();
 		buildRunesWithoutDomination();
 		buildRunesWithoutSorcery();
@@ -224,34 +226,34 @@ public class Controller
 	
 	public void buildRunesWithoutDomination()
 	{
-		runesWithoutPrecision.add("Precision");
-		runesWithoutPrecision.add("Sorcery");
-		runesWithoutPrecision.add("Resolve");
-		runesWithoutPrecision.add("Inspiration");
+		runesWithoutDomination.add("Precision");
+		runesWithoutDomination.add("Sorcery");
+		runesWithoutDomination.add("Resolve");
+		runesWithoutDomination.add("Inspiration");
 	}
 	
 	public void buildRunesWithoutSorcery()
 	{
-		runesWithoutPrecision.add("Precision");
-		runesWithoutPrecision.add("Domination");
-		runesWithoutPrecision.add("Resolve");
-		runesWithoutPrecision.add("Inspiration");
+		runesWithoutSorcery.add("Precision");
+		runesWithoutSorcery.add("Domination");
+		runesWithoutSorcery.add("Resolve");
+		runesWithoutSorcery.add("Inspiration");
 	}
 	
 	public void buildRunesWithoutResolve()
 	{
-		runesWithoutPrecision.add("Precision");
-		runesWithoutPrecision.add("Domination");
-		runesWithoutPrecision.add("Sorcery");
-		runesWithoutPrecision.add("Inspiration");
+		runesWithoutResolve.add("Precision");
+		runesWithoutResolve.add("Domination");
+		runesWithoutResolve.add("Sorcery");
+		runesWithoutResolve.add("Inspiration");
 	}
 	
 	public void buildRunesWithoutInspiration()
 	{
-		runesWithoutPrecision.add("Precision");
-		runesWithoutPrecision.add("Domination");
-		runesWithoutPrecision.add("Sorcery");
-		runesWithoutPrecision.add("Resolve");
+		runesWithoutInspiration.add("Precision");
+		runesWithoutInspiration.add("Domination");
+		runesWithoutInspiration.add("Sorcery");
+		runesWithoutInspiration.add("Resolve");
 	}
 	
 	public String [] convertChampionList()
@@ -330,20 +332,6 @@ public class Controller
 		{
 			return null;
 		}
-	}
-	
-	public int getRandomWithExclusion(Random rnd, int start, int end, int... exclude) 
-	{
-	    int random = start + rnd.nextInt(end - start + 1 - exclude.length);
-	    for (int ex : exclude) 
-	    {
-	        if (random < ex) 
-	        {
-	            break;
-	        }
-	        random++;
-	    }
-	    return random;
 	}
 	
 	public void start()

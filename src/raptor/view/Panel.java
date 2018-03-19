@@ -211,7 +211,6 @@ public class Panel extends JPanel
 		ArrayList<String> summonerSpells = randomizeSummonerSpells();
 		ArrayList<String> runes = randomizeRunes();
 		
-		
 		nameLabel.setText(currentChampion.getName());
 		titleLabel.setText(currentChampion.getTitle());
 		
@@ -281,31 +280,30 @@ public class Panel extends JPanel
 		String keystonePath;
 		String secondPath;
 		
-		
 		if(runesPathIndex == 0)
 		{
 			keystonePath = "Precision";
-			secondPath = appController.getSpecificListWithout("Precision").get(randomNum.nextInt(4));
+			secondPath = appController.getSpecificListWithout(keystonePath).get(randomNum.nextInt(4));
 		}
 		else if(runesPathIndex == 1)
 		{
 			keystonePath = "Domination";
-			secondPath = appController.getSpecificListWithout("Domination").get(randomNum.nextInt(4));
+			secondPath = appController.getSpecificListWithout(keystonePath).get(randomNum.nextInt(4));
 		}
 		else if(runesPathIndex == 2)
 		{
 			keystonePath = "Sorcery";
-			secondPath = appController.getSpecificListWithout("Sorcery").get(randomNum.nextInt(4));
+			secondPath = appController.getSpecificListWithout(keystonePath).get(randomNum.nextInt(4));
 		}
 		else if(runesPathIndex == 3)
 		{
 			keystonePath = "Resolve";
-			secondPath = appController.getSpecificListWithout("Resolve").get(randomNum.nextInt(4));
+			secondPath = appController.getSpecificListWithout(keystonePath).get(randomNum.nextInt(4));
 		}
 		else if(runesPathIndex == 4)
 		{
 			keystonePath = "Inspiration";
-			secondPath = appController.getSpecificListWithout("Inspiration").get(randomNum.nextInt(4));
+			secondPath = appController.getSpecificListWithout(keystonePath).get(randomNum.nextInt(4));
 		}
 		else
 		{
@@ -344,7 +342,7 @@ public class Panel extends JPanel
 		{
 			if (randomRow == 0)
 			{
-				allRunes.add(appController.getSpecificList(keystonePath)
+				allRunes.add(appController.getSpecificList(secondPath)
 						.get(randomNum.nextInt(3) + 3));
 			}
 			else if (randomRow == 1)
