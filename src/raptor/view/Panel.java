@@ -140,12 +140,12 @@ public class Panel extends JPanel
 		this.add(summonerSpell1);
 		this.add(summonerSpell2);
 		
-		this.add(runesKeystone);		//testing
-		this.add(runes1Slot1); 			//Testing
-		this.add(runes1Slot2); 			//Testing
-		this.add(runes1Slot3); 			//Testing
-		this.add(runes2Slot1);	      	//Testing
-		this.add(runes2Slot2);			//Testing
+		this.add(runesKeystone);
+		this.add(runes1Slot1);
+		this.add(runes1Slot2);
+		this.add(runes1Slot3);
+		this.add(runes2Slot1);
+		this.add(runes2Slot2);
 		
 		this.add(item1);					//Testing
 		this.add(item2);					//Testing
@@ -163,7 +163,6 @@ public class Panel extends JPanel
 		appLayout.putConstraint(SpringLayout.EAST, championPicLabel, -440, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.WEST, championPicLabel, 10, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.SOUTH, nameLabel, -6, SpringLayout.NORTH, titleLabel);
-		appLayout.putConstraint(SpringLayout.EAST, nameLabel, 0, SpringLayout.EAST, titleLabel);
 		appLayout.putConstraint(SpringLayout.NORTH, titleLabel, 52, SpringLayout.NORTH, this);
 		appLayout.putConstraint(SpringLayout.NORTH, nameLabel, 20, SpringLayout.NORTH, this);
 		appLayout.putConstraint(SpringLayout.WEST, titleLabel, 11, SpringLayout.EAST, championPicLabel);
@@ -177,25 +176,8 @@ public class Panel extends JPanel
 		appLayout.putConstraint(SpringLayout.EAST, runes1Slot1, -80, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.WEST, runesKeystone, 0, SpringLayout.WEST, runes1Slot1);
 		appLayout.putConstraint(SpringLayout.SOUTH, runesKeystone, -6, SpringLayout.NORTH, runes1Slot1);
-		appLayout.putConstraint(SpringLayout.WEST, item6, 26, SpringLayout.EAST, item5);
-		appLayout.putConstraint(SpringLayout.WEST, item3, 0, SpringLayout.WEST, item6);
-		appLayout.putConstraint(SpringLayout.NORTH, item6, 0, SpringLayout.NORTH, item4);
-		appLayout.putConstraint(SpringLayout.NORTH, randomizeButton, 27, SpringLayout.SOUTH, item1);
 		appLayout.putConstraint(SpringLayout.WEST, randomizeButton, 63, SpringLayout.EAST, championPicLabel);
-		appLayout.putConstraint(SpringLayout.SOUTH, randomizeButton, -18, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.EAST, randomizeButton, -239, SpringLayout.EAST, this);
-		appLayout.putConstraint(SpringLayout.NORTH, item5, 0, SpringLayout.NORTH, item4);
-		appLayout.putConstraint(SpringLayout.WEST, item5, 25, SpringLayout.EAST, item4);
-		appLayout.putConstraint(SpringLayout.WEST, item4, 11, SpringLayout.EAST, championPicLabel);
-		appLayout.putConstraint(SpringLayout.SOUTH, item4, -159, SpringLayout.SOUTH, this);
-		appLayout.putConstraint(SpringLayout.NORTH, item1, 24, SpringLayout.SOUTH, item4);
-		appLayout.putConstraint(SpringLayout.WEST, runes1Slot3, 42, SpringLayout.EAST, item3);
-		appLayout.putConstraint(SpringLayout.WEST, runes1Slot2, 42, SpringLayout.EAST, item3);
-		appLayout.putConstraint(SpringLayout.EAST, titleLabel, 0, SpringLayout.EAST, item3);
-		appLayout.putConstraint(SpringLayout.NORTH, item3, 0, SpringLayout.NORTH, item1);
-		appLayout.putConstraint(SpringLayout.NORTH, item2, 0, SpringLayout.NORTH, item1);
-		appLayout.putConstraint(SpringLayout.WEST, item2, 25, SpringLayout.EAST, item1);
-		appLayout.putConstraint(SpringLayout.WEST, item1, 11, SpringLayout.EAST, championPicLabel);
 		appLayout.putConstraint(SpringLayout.WEST, runes2Slot2, 6, SpringLayout.EAST, runes1Slot2);
 		appLayout.putConstraint(SpringLayout.SOUTH, runes2Slot2, 0, SpringLayout.SOUTH, runes1Slot2);
 		appLayout.putConstraint(SpringLayout.NORTH, runes1Slot3, 6, SpringLayout.SOUTH, runes1Slot2);
@@ -203,6 +185,23 @@ public class Panel extends JPanel
 		appLayout.putConstraint(SpringLayout.SOUTH, runes2Slot1, 0, SpringLayout.SOUTH, runes1Slot1);
 		appLayout.putConstraint(SpringLayout.SOUTH, runes1Slot1, -6, SpringLayout.NORTH, runes1Slot2);
 		appLayout.putConstraint(SpringLayout.SOUTH, runes1Slot2, -104, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, titleLabel, -186, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.EAST, nameLabel, -186, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, item6, 6, SpringLayout.SOUTH, item3);
+		appLayout.putConstraint(SpringLayout.EAST, item6, 0, SpringLayout.EAST, nameLabel);
+		appLayout.putConstraint(SpringLayout.NORTH, randomizeButton, 45, SpringLayout.SOUTH, item4);
+		appLayout.putConstraint(SpringLayout.SOUTH, randomizeButton, -18, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.WEST, runes1Slot3, 95, SpringLayout.EAST, randomizeButton);
+		appLayout.putConstraint(SpringLayout.NORTH, item5, 6, SpringLayout.SOUTH, item2);
+		appLayout.putConstraint(SpringLayout.WEST, item5, 0, SpringLayout.WEST, item2);
+		appLayout.putConstraint(SpringLayout.NORTH, item4, 6, SpringLayout.SOUTH, item1);
+		appLayout.putConstraint(SpringLayout.WEST, item4, 0, SpringLayout.WEST, nameLabel);appLayout.putConstraint(SpringLayout.NORTH, item2, 0, SpringLayout.NORTH, item1);
+		appLayout.putConstraint(SpringLayout.WEST, item2, 24, SpringLayout.EAST, item1);
+		appLayout.putConstraint(SpringLayout.WEST, runes1Slot2, 42, SpringLayout.EAST, item3);
+		appLayout.putConstraint(SpringLayout.NORTH, item3, 0, SpringLayout.NORTH, item1);
+		appLayout.putConstraint(SpringLayout.EAST, item3, 0, SpringLayout.EAST, nameLabel);
+		appLayout.putConstraint(SpringLayout.WEST, item1, 221, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, item1, -159, SpringLayout.SOUTH, this);
 	}
 	
 	private void updateInfo()
@@ -210,6 +209,8 @@ public class Panel extends JPanel
 		Champion currentChampion = randomizeChampion();
 		ArrayList<String> summonerSpells = randomizeSummonerSpells();
 		ArrayList<String> runes = randomizeRunes();
+		//ArrayList<String> items = randomizeItems();
+		String boot = randomizeBoot();
 		
 		nameLabel.setText(currentChampion.getName());
 		titleLabel.setText(currentChampion.getTitle());
@@ -240,6 +241,36 @@ public class Panel extends JPanel
 		
 		runes2Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
 								 + runes.get(5) + "Picture.png")));
+		
+		//item1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
+		//		 + items.get(0) + "Picture.png")));
+		
+		//item2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
+		//		 + items.get(1) + "Picture.png")));
+		
+		//item3.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
+		//		 + items.get(2) + "Picture.png")));
+		
+		//item4.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
+		//		 + items.get(3) + "Picture.png")));
+		
+		//item5.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
+		//		 + items.get(4) + "Picture.png")));
+		
+		if (currentChampion.getName().equals("Cassiopeia"))
+		{
+			//item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" //Finished Version
+			//		 + items.get(5) + "Picture.png")));
+			
+			
+			item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" //Temp Version, remove once finished
+					 + runes.get(0) + "Picture.png")));
+		}
+		else
+		{
+			item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
+					 + boot + "Picture.png")));
+		}
 	}
 	
 	private Champion randomizeChampion()
@@ -444,6 +475,19 @@ public class Panel extends JPanel
 		}
 		
 		return allRunes;
+	}
+	
+	private String randomizeBoot()
+	{
+		Random randomNum = new Random();
+		
+		String boot = "";
+		int selectedBootIndex = -1;
+		
+		selectedBootIndex = randomNum.nextInt(appController.getBootsList().size());
+		boot = appController.getBootsList().get(selectedBootIndex);
+		
+		return boot;
 	}
 	
 	private void setupListeners()

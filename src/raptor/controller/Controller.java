@@ -23,6 +23,8 @@ public class Controller
 	private List<String> runesWithoutSorcery;
 	private List<String> runesWithoutResolve;
 	private List<String> runesWithoutInspiration;
+	private List<String> itemsList;
+	private List<String> bootsList;
 	private Frame appFrame;
 	
 	public Controller()
@@ -39,6 +41,8 @@ public class Controller
 		runesWithoutSorcery = new ArrayList<String>();
 		runesWithoutResolve = new ArrayList<String>();
 		runesWithoutInspiration = new ArrayList<String>();
+		bootsList = new ArrayList<String>();
+		itemsList = new ArrayList<String>();
 		appFrame = new Frame(this);
 		
 		buildChampionList();
@@ -55,6 +59,9 @@ public class Controller
 		buildRunesWithoutSorcery();
 		buildRunesWithoutResolve();
 		buildRunesWithoutInspiration();
+		
+		buildItemsList();
+		buildBootsList();
 		
 		//Image icon = Toolkit.getDefaultToolkit().getImage("/raptor/view/images/AppIcon.png");
 	    //appFrame.setIconImage(icon);        Trying to get this to work
@@ -266,6 +273,27 @@ public class Controller
 		runesWithoutInspiration.add("Resolve");
 	}
 	
+	public void buildItemsList()
+	{
+		itemsList.add("AbyssalMask");
+		itemsList.add("AdaptiveHelm");
+		itemsList.add("ArchangelsStaff");
+		itemsList.add("ArdentCenser");
+		itemsList.add("AthenesUnholyGrail");
+		itemsList.add("BannerOfCommand");
+	}
+	
+	public void buildBootsList()
+	{
+		bootsList.add("BerserkersGreaves");
+		bootsList.add("BootsOfMobility");
+		bootsList.add("BootsOfSwiftness");
+		bootsList.add("IonianBootsOfLucidity");
+		bootsList.add("MercurysTreads");
+		bootsList.add("NinjaTabi");
+		bootsList.add("SorcerersShoes");
+	}
+	
 	public String [] convertChampionList()
 	{
 		String [] names = new String [championList.size()];
@@ -342,6 +370,16 @@ public class Controller
 		{
 			return null;
 		}
+	}
+	
+	public List<String> getItemsList()
+	{
+		return itemsList;
+	}
+	
+	public List<String> getBootsList()
+	{
+		return bootsList;
 	}
 	
 	public void start()
