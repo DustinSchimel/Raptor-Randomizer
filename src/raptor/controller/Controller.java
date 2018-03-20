@@ -119,6 +119,16 @@ public class Controller
 		championList.add(new Kayn());
 		championList.add(new Kennen());
 		championList.add(new KhaZix());
+		championList.add(new Kindred());
+		championList.add(new Kled());
+		championList.add(new KogMaw());
+		championList.add(new LeBlanc());
+		championList.add(new LeeSin());
+		championList.add(new Leona());
+		championList.add(new Lissandra());
+		championList.add(new Lucian());
+		championList.add(new Lulu());
+		championList.add(new Lux());
 		
 	}
 	
