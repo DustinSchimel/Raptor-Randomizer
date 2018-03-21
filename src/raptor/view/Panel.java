@@ -187,21 +187,22 @@ public class Panel extends JPanel
 		appLayout.putConstraint(SpringLayout.SOUTH, runes1Slot2, -104, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.EAST, titleLabel, -186, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.EAST, nameLabel, -186, SpringLayout.EAST, this);
-		appLayout.putConstraint(SpringLayout.NORTH, item6, 6, SpringLayout.SOUTH, item3);
-		appLayout.putConstraint(SpringLayout.EAST, item6, 0, SpringLayout.EAST, nameLabel);
-		appLayout.putConstraint(SpringLayout.NORTH, randomizeButton, 45, SpringLayout.SOUTH, item4);
-		appLayout.putConstraint(SpringLayout.SOUTH, randomizeButton, -18, SpringLayout.SOUTH, this);
 		appLayout.putConstraint(SpringLayout.WEST, runes1Slot3, 95, SpringLayout.EAST, randomizeButton);
-		appLayout.putConstraint(SpringLayout.NORTH, item5, 6, SpringLayout.SOUTH, item2);
-		appLayout.putConstraint(SpringLayout.WEST, item5, 0, SpringLayout.WEST, item2);
-		appLayout.putConstraint(SpringLayout.NORTH, item4, 6, SpringLayout.SOUTH, item1);
-		appLayout.putConstraint(SpringLayout.WEST, item4, 0, SpringLayout.WEST, nameLabel);appLayout.putConstraint(SpringLayout.NORTH, item2, 0, SpringLayout.NORTH, item1);
+		appLayout.putConstraint(SpringLayout.NORTH, item2, 0, SpringLayout.NORTH, item1);
 		appLayout.putConstraint(SpringLayout.WEST, item2, 24, SpringLayout.EAST, item1);
 		appLayout.putConstraint(SpringLayout.WEST, runes1Slot2, 42, SpringLayout.EAST, item3);
 		appLayout.putConstraint(SpringLayout.NORTH, item3, 0, SpringLayout.NORTH, item1);
 		appLayout.putConstraint(SpringLayout.EAST, item3, 0, SpringLayout.EAST, nameLabel);
 		appLayout.putConstraint(SpringLayout.WEST, item1, 221, SpringLayout.WEST, this);
 		appLayout.putConstraint(SpringLayout.SOUTH, item1, -159, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, item4, 0, SpringLayout.EAST, item1);
+		appLayout.putConstraint(SpringLayout.SOUTH, item6, 0, SpringLayout.SOUTH, item4);
+		appLayout.putConstraint(SpringLayout.EAST, item6, 0, SpringLayout.EAST, nameLabel);
+		appLayout.putConstraint(SpringLayout.SOUTH, item4, 0, SpringLayout.SOUTH, item5);
+		appLayout.putConstraint(SpringLayout.NORTH, item5, 16, SpringLayout.SOUTH, item2);
+		appLayout.putConstraint(SpringLayout.EAST, item5, 0, SpringLayout.EAST, item2);
+		appLayout.putConstraint(SpringLayout.NORTH, randomizeButton, 35, SpringLayout.SOUTH, item4);
+		appLayout.putConstraint(SpringLayout.SOUTH, randomizeButton, -18, SpringLayout.SOUTH, this);
 	}
 	
 	private void updateInfo()
@@ -342,45 +343,46 @@ public class Panel extends JPanel
 			secondPath = "";
 		}
 		
-		
-		allRunes.add(appController.getSpecificList(keystonePath)	//Adds the keystone to the list
-				.get(randomNum.nextInt(3)));
-		
-		
-		if (keystonePath.equals("Resolve"))
+		if (keystonePath.equals("Precision"))							//Adds the keystone to the list
 		{
 			allRunes.add(appController.getSpecificList(keystonePath)
-					.get(randomNum.nextInt(3) + 3));
+					.get(randomNum.nextInt(4)));
+			
+			allRunes.add(appController.getSpecificList(keystonePath)	//Adds the three minor runes
+					.get(randomNum.nextInt(3) + 4));
 			
 			allRunes.add(appController.getSpecificList(keystonePath)
-					.get(randomNum.nextInt(4) + 6));
+					.get(randomNum.nextInt(3) + 7));
 			
 			allRunes.add(appController.getSpecificList(keystonePath)
 					.get(randomNum.nextInt(3) + 10));
 		}
 		else
 		{
-			for (int index = 0, addition = 3; index < 3; index++, addition = addition + 3)
+			allRunes.add(appController.getSpecificList(keystonePath)
+					.get(randomNum.nextInt(3)));
+			
+			for (int index = 0, addition = 3; index < 3; index++, addition = addition + 3)	//Adds the three minor runes
 			{
 				allRunes.add(appController.getSpecificList(keystonePath)
 						.get(randomNum.nextInt(3) + addition));
 			}
 		}
-		
+			
 		int randomRow = randomNum.nextInt(3);
 		int randomNextRow = randomNum.nextInt(2);
 		
-		if (secondPath.equals("Resolve"))
+		if (secondPath.equals("Precision"))
 		{
 			if (randomRow == 0)
 			{
 				allRunes.add(appController.getSpecificList(secondPath)
-						.get(randomNum.nextInt(3) + 3));
+						.get(randomNum.nextInt(3) + 4));
 				
 				if (randomNextRow == 0)
 				{
 					allRunes.add(appController.getSpecificList(secondPath)
-							.get(randomNum.nextInt(3) + 6));
+							.get(randomNum.nextInt(3) + 7));
 				}
 				else if (randomNextRow == 1)
 				{
@@ -391,12 +393,12 @@ public class Panel extends JPanel
 			else if (randomRow == 1)
 			{
 				allRunes.add(appController.getSpecificList(secondPath)
-						.get(randomNum.nextInt(3) + 6));
+						.get(randomNum.nextInt(3) + 7));
 				
 				if (randomNextRow == 0)
 				{
 					allRunes.add(appController.getSpecificList(secondPath)
-							.get(randomNum.nextInt(3) + 3));
+							.get(randomNum.nextInt(3) + 4));
 				}
 				else if (randomNextRow == 1)
 				{
@@ -412,12 +414,12 @@ public class Panel extends JPanel
 				if (randomNextRow == 0)
 				{
 					allRunes.add(appController.getSpecificList(secondPath)
-							.get(randomNum.nextInt(3) + 3));
+							.get(randomNum.nextInt(3) + 4));
 				}
 				else if (randomNextRow == 1)
 				{
 					allRunes.add(appController.getSpecificList(secondPath)
-							.get(randomNum.nextInt(3) + 6));
+							.get(randomNum.nextInt(3) + 7));
 				}
 			}
 		}

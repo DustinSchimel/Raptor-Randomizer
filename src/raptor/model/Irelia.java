@@ -4,11 +4,11 @@ public class Irelia extends Champion
 {
 	public Irelia()
 	{
-		super("The Will of the Blades", "Irelia");
+		super("The Blade Dancer", "Irelia");
 	}
 	
 	public Irelia(String name)
 	{
-		super("The Will of the Blades", name);
+		super("The Blade Dancer", name);
 	}
 }

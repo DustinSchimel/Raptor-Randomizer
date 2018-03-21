@@ -157,6 +157,7 @@ public class Controller
 		precisionRunesList.add("PressTheAttack");
 		precisionRunesList.add("LethalTempo");
 		precisionRunesList.add("FleetFootwork");
+		precisionRunesList.add("Conqueror");
 		precisionRunesList.add("Overheal");
 		precisionRunesList.add("Triumph");
 		precisionRunesList.add("PresenceOfMind");
@@ -208,10 +209,9 @@ public class Controller
 		resolveRunesList.add("Demolish");
 		resolveRunesList.add("FontOfLife");
 		resolveRunesList.add("BonePlating");
-		resolveRunesList.add("IronSkin");
-		resolveRunesList.add("MirrorShell");
 		resolveRunesList.add("Conditioning");
 		resolveRunesList.add("SecondWind");
+		resolveRunesList.add("Chrysalis");
 		resolveRunesList.add("Overgrowth");
 		resolveRunesList.add("Revitalize");
 		resolveRunesList.add("Unflinching");
