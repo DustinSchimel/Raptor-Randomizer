@@ -210,7 +210,7 @@ public class Panel extends JPanel
 		Champion currentChampion = randomizeChampion();
 		ArrayList<String> summonerSpells = randomizeSummonerSpells();
 		ArrayList<String> runes = randomizeRunes();
-		//ArrayList<String> items = randomizeItems();
+		ArrayList<String> items = randomizeItems();
 		String boot = randomizeBoot();
 		
 		nameLabel.setText(currentChampion.getName());
@@ -243,29 +243,25 @@ public class Panel extends JPanel
 		runes2Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
 								 + runes.get(5) + "Picture.png")));
 		
-		//item1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
-		//		 + items.get(0) + "Picture.png")));
+		item1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
+				 + items.get(0) + "Picture.png")));
 		
-		//item2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
-		//		 + items.get(1) + "Picture.png")));
+		item2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
+				 + items.get(1) + "Picture.png")));
 		
-		//item3.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
-		//		 + items.get(2) + "Picture.png")));
+		item3.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
+				 + items.get(2) + "Picture.png")));
 		
-		//item4.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
-		//		 + items.get(3) + "Picture.png")));
+		item4.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
+				 + items.get(3) + "Picture.png")));
 		
-		//item5.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
-		//		 + items.get(4) + "Picture.png")));
+		item5.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
+				 + items.get(4) + "Picture.png")));
 		
 		if (currentChampion.getName().equals("Cassiopeia"))
 		{
-			//item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" //Finished Version
-			//		 + items.get(5) + "Picture.png")));
-			
-			
-			item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" //Temp Version, remove once finished
-					 + runes.get(0) + "Picture.png")));
+			item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" //Finished Version
+					 + items.get(5) + "Picture.png")));
 		}
 		else
 		{
@@ -490,6 +486,40 @@ public class Panel extends JPanel
 		boot = appController.getBootsList().get(selectedBootIndex);
 		
 		return boot;
+	}
+	
+	private ArrayList<String> randomizeItems()
+	{
+		ArrayList<String> allItems = new ArrayList<String>();
+		ArrayList<Integer> itemIndexs = new ArrayList<Integer>();
+		int randomIndex;
+		
+		Random randomNum = new Random();
+		
+		for (int index = 0; index < 6; index++)
+		{
+			
+			if(allItems.isEmpty())
+			{
+				itemIndexs.add(randomNum.nextInt(appController.getItemsList().size()));
+				allItems.add(appController.getItemsList().get(itemIndexs.get(index)));	//Temporary until items with exceptions are added	
+			}
+			else
+			{
+				randomIndex = randomNum.nextInt(appController.getItemsList().size());
+				
+				while (itemIndexs.contains(randomIndex))
+				{
+					randomIndex = randomNum.nextInt(appController.getItemsList().size());
+				}
+				
+				itemIndexs.add(randomIndex);
+				
+				allItems.add(appController.getItemsList().get(itemIndexs.get(index)));	//Maybe have it compare the generated item to all the items currently in the list
+			}
+		}
+		
+		return allItems;
 	}
 	
 	private void setupListeners()
