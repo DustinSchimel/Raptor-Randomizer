@@ -136,6 +136,16 @@ public class Controller
 		championList.add(new Lucian());
 		championList.add(new Lulu());
 		championList.add(new Lux());
+		championList.add(new Malphite());
+		championList.add(new Malzahar());
+		championList.add(new Maokai());
+		championList.add(new MasterYi());
+		championList.add(new MissFortune());
+		championList.add(new Mordekaiser());
+		championList.add(new Morgana());
+		championList.add(new Nami());
+		championList.add(new Nasus());
+		championList.add(new Nautilus());
 		
 	}
 	
