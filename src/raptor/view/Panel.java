@@ -491,32 +491,16 @@ public class Panel extends JPanel
 	private ArrayList<String> randomizeItems()
 	{
 		ArrayList<String> allItems = new ArrayList<String>();
-		ArrayList<Integer> itemIndexs = new ArrayList<Integer>();
-		int randomIndex;
+		List<String> availableItems = new ArrayList<String>(appController.getItemsList());
 		
 		Random randomNum = new Random();
 		
 		for (int index = 0; index < 6; index++)
 		{
 			
-			if(allItems.isEmpty())
-			{
-				itemIndexs.add(randomNum.nextInt(appController.getItemsList().size()));
-				allItems.add(appController.getItemsList().get(itemIndexs.get(index)));	//Temporary until items with exceptions are added	
-			}
-			else
-			{
-				randomIndex = randomNum.nextInt(appController.getItemsList().size());
-				
-				while (itemIndexs.contains(randomIndex))
-				{
-					randomIndex = randomNum.nextInt(appController.getItemsList().size());
-				}
-				
-				itemIndexs.add(randomIndex);
-				
-				allItems.add(appController.getItemsList().get(itemIndexs.get(index)));	//Maybe have it compare the generated item to all the items currently in the list
-			}
+			int itemToAddIndex = randomNum.nextInt(availableItems.size());
+			allItems.add(availableItems.get(itemToAddIndex));	//Temporary until items with exceptions are added
+			availableItems.remove(itemToAddIndex);
 		}
 		
 		return allItems;

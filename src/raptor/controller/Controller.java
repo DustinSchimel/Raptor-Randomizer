@@ -146,6 +146,16 @@ public class Controller
 		championList.add(new Nami());
 		championList.add(new Nasus());
 		championList.add(new Nautilus());
+		championList.add(new Nidalee());
+		championList.add(new Nocturne());
+		championList.add(new Nunu());
+		championList.add(new Olaf());
+		championList.add(new Orianna());
+		championList.add(new Ornn());
+		championList.add(new Pantheon());
+		championList.add(new Poppy());
+		championList.add(new Quinn());
+		championList.add(new Rakan());
 		
 	}
 	
