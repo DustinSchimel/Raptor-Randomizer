@@ -7,6 +7,7 @@ public abstract class Champion
 	private String name;
 	private String title;
 	private boolean isMelee;
+	private boolean isFormChanger;
 	
 	
 	public Champion (String title, String name, boolean isMelee)
@@ -14,6 +15,15 @@ public abstract class Champion
 		this.name = name;
 		this.title = title;
 		this.isMelee = isMelee;
+		this.isFormChanger = false;
+	}
+	
+	public Champion (String title, String name, boolean isMelee, boolean isFormChanger)
+	{
+		this.name = name;
+		this.title = title;
+		this.isMelee = isMelee;
+		this.isFormChanger = isFormChanger;
 	}
 	
 	public String getName()
@@ -52,5 +62,10 @@ public abstract class Champion
 	public boolean isChampionMelee()
 	{
 		return isMelee;
+	}
+	
+	public boolean isFormChanger()
+	{
+		return isFormChanger;
 	}
 }

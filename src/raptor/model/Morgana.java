@@ -4,11 +4,6 @@ public class Morgana extends Champion
 {
 	public Morgana()
 	{
-		super("Fallen Angel", "Morgana");
-	}
-	
-	public Morgana(String name)
-	{
-		super("Fallen Angel", name);
+		super("Fallen Angel", "Morgana", false);
 	}
 }

@@ -4,12 +4,7 @@ public class Gnar extends Champion
 {
 	public Gnar()
 	{
-		super("The Missing Link", "Gnar");
-	}
-	
-	public Gnar(String name)
-	{
-		super("The Missing Link", name);
+		super("The Missing Link", "Gnar", false);	//Form changer, but not practically
 	}
 }
 

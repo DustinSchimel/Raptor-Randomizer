@@ -7,5 +7,3 @@ public class Ahri extends Champion
 		super("The Nine-Tailed Fox", "Ahri", false);
 	}
 }
-
-
