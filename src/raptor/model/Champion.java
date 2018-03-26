@@ -6,19 +6,14 @@ public abstract class Champion
 {
 	private String name;
 	private String title;
+	private boolean isMelee;
 	
 	
-	public Champion (String title, String name)
+	public Champion (String title, String name, boolean isMelee)
 	{
 		this.name = name;
 		this.title = title;
-	}
-	
-	public String toString()
-	{
-		String description = "Champion: " + name + " , Title: " + title;
-		
-		return description;
+		this.isMelee = isMelee;
 	}
 	
 	public String getName()
@@ -52,5 +47,10 @@ public abstract class Champion
 	public String getTitle()
 	{
 		return title;
+	}
+	
+	public boolean isChampionMelee()
+	{
+		return isMelee;
 	}
 }

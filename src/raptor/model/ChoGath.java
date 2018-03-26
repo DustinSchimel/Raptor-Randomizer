@@ -4,11 +4,6 @@ public class ChoGath extends Champion
 {
 	public ChoGath()
 	{
-		super("The Terror of the Void", "Cho'Gath");
-	}
-	
-	public ChoGath(String name)
-	{
-		super("The Terror of the Void", name);
+		super("The Terror of the Void", "Cho'Gath", true);
 	}
 }

@@ -4,11 +4,6 @@ public class Alistar extends Champion
 {
 	public Alistar()
 	{
-		super("The Minotaur", "Alistar");
-	}
-	
-	public Alistar(String name)
-	{
-		super("The Minotaur", name);
+		super("The Minotaur", "Alistar", true);
 	}
 }
