@@ -157,6 +157,18 @@ public class Controller
 		championList.add(new Quinn());
 		championList.add(new Rakan());
 		
+		//Test multiform
+		//championList.add(new Jayce());
+		//championList.add(new Jayce());
+		
+		//Test melee
+		//championList.add(new Poppy());
+		//championList.add(new Poppy());
+		
+		//Test ranged
+		//championList.add(new Nami());
+		//championList.add(new Nami());
+		
 	}
 	
 	public void buildSummonerSpellList()
@@ -301,6 +313,11 @@ public class Controller
 		itemsList.add("ArdentCenser");
 		itemsList.add("AthenesUnholyGrail");
 		itemsList.add("BannerOfCommand");
+		
+		itemsList.add("RunaansHurricane");
+		itemsList.add("RavenousHydra");
+		itemsList.add("TitanicHydra");
+		itemsList.add("SteraksGage");
 	}
 	
 	public void buildBootsList()

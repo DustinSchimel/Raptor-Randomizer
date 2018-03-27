@@ -210,7 +210,7 @@ public class Panel extends JPanel
 		Champion currentChampion = randomizeChampion();
 		ArrayList<String> summonerSpells = randomizeSummonerSpells();
 		ArrayList<String> runes = randomizeRunes();
-		ArrayList<String> items = randomizeItems();
+		ArrayList<String> items = randomizeItems(currentChampion);
 		String boot = randomizeBoot();
 		
 		nameLabel.setText(currentChampion.getName());
@@ -488,16 +488,32 @@ public class Panel extends JPanel
 		return boot;
 	}
 	
-	private ArrayList<String> randomizeItems()
+	private ArrayList<String> randomizeItems(Champion currentChampion)
 	{
 		ArrayList<String> allItems = new ArrayList<String>();
 		List<String> availableItems = new ArrayList<String>(appController.getItemsList());
+		
+		if (currentChampion.isChampionMelee() == true)	//If champion is melee
+		{
+			if (currentChampion.isFormChanger() == false)
+			{
+				availableItems.remove(6);	//Runaan's Hurricane, must change index as items are added || May have to make it so both hydra and ravenous cannot both be bought
+			}
+		}
+		else if (currentChampion.isChampionMelee() == false)	//If champion is ranged
+		{
+			if (currentChampion.isFormChanger() == false)
+			{
+				availableItems.remove(7);	//Ravenous Hydra, must change index as items are added
+				availableItems.remove(7);	//Titanic Hydra, must change index as items are added
+				availableItems.remove(7);	//Sterak's Gage, must change index as items are added
+			}
+		}
 		
 		Random randomNum = new Random();
 		
 		for (int index = 0; index < 6; index++)
 		{
-			
 			int itemToAddIndex = randomNum.nextInt(availableItems.size());
 			allItems.add(availableItems.get(itemToAddIndex));	//Temporary until items with exceptions are added
 			availableItems.remove(itemToAddIndex);
