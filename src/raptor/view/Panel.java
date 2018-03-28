@@ -497,16 +497,16 @@ public class Panel extends JPanel
 		{
 			if (currentChampion.isFormChanger() == false)
 			{
-				availableItems.remove(6);	//Runaan's Hurricane, must change index as items are added || May have to make it so both hydra and ravenous cannot both be bought
+				availableItems.remove(appController.findItemLocation("RunaansHurricane", availableItems));	//Runaan's Hurricane, must change index as items are added || May have to make it so both hydra and ravenous cannot both be bought
 			}
 		}
 		else if (currentChampion.isChampionMelee() == false)	//If champion is ranged
 		{
 			if (currentChampion.isFormChanger() == false)
 			{
-				availableItems.remove(7);	//Ravenous Hydra, must change index as items are added
-				availableItems.remove(7);	//Titanic Hydra, must change index as items are added
-				availableItems.remove(7);	//Sterak's Gage, must change index as items are added
+				availableItems.remove(appController.findItemLocation("RavenousHydra", availableItems));	//Ravenous Hydra, must change index as items are added
+				availableItems.remove(appController.findItemLocation("TitanicHydra", availableItems));	//Titanic Hydra, must change index as items are added
+				availableItems.remove(appController.findItemLocation("SteraksGage", availableItems));	//Sterak's Gage, must change index as items are added
 			}
 		}
 		

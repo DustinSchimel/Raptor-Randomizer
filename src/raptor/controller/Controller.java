@@ -419,6 +419,18 @@ public class Controller
 		return bootsList;
 	}
 	
+	public int findItemLocation(String itemToFind, List availableItemsList)
+	{    
+	    for (int index = 0; index < availableItemsList.size(); index++)
+	    {
+	    	if (availableItemsList.get(index).equals(itemToFind))
+	    	{
+	    		return index;
+	    	}
+	    }
+	    return -1;
+	}
+	
 	public void start()
 	{
 		
