@@ -497,16 +497,16 @@ public class Panel extends JPanel
 		{
 			if (currentChampion.isFormChanger() == false)
 			{
-				availableItems.remove(appController.findItemLocation("RunaansHurricane", availableItems));	//Runaan's Hurricane, must change index as items are added || May have to make it so both hydra and ravenous cannot both be bought
+				availableItems.remove(appController.findItemLocation("RunaansHurricane", availableItems));
 			}
 		}
 		else if (currentChampion.isChampionMelee() == false)	//If champion is ranged
 		{
 			if (currentChampion.isFormChanger() == false)
 			{
-				availableItems.remove(appController.findItemLocation("RavenousHydra", availableItems));	//Ravenous Hydra, must change index as items are added
-				availableItems.remove(appController.findItemLocation("TitanicHydra", availableItems));	//Titanic Hydra, must change index as items are added
-				availableItems.remove(appController.findItemLocation("SteraksGage", availableItems));	//Sterak's Gage, must change index as items are added
+				availableItems.remove(appController.findItemLocation("RavenousHydra", availableItems));	//May have to make it so both hydra and ravenous cannot both be bought
+				availableItems.remove(appController.findItemLocation("TitanicHydra", availableItems));
+				availableItems.remove(appController.findItemLocation("SteraksGage", availableItems));
 			}
 		}
 		
@@ -515,8 +515,20 @@ public class Panel extends JPanel
 		for (int index = 0; index < 6; index++)
 		{
 			int itemToAddIndex = randomNum.nextInt(availableItems.size());
-			allItems.add(availableItems.get(itemToAddIndex));	//Temporary until items with exceptions are added
-			availableItems.remove(itemToAddIndex);
+			
+			if (availableItems.get(itemToAddIndex).equals("RemnantOfTheAscended") || availableItems.get(itemToAddIndex).equals("RemnantOfTheAspect")
+					|| availableItems.get(itemToAddIndex).equals("RemnantOfTheWatchers"))
+			{
+				allItems.add(availableItems.get(itemToAddIndex));
+				availableItems.remove(appController.findItemLocation("RemnantOfTheAscended", availableItems));
+				availableItems.remove(appController.findItemLocation("RemnantOfTheAspect", availableItems));
+				availableItems.remove(appController.findItemLocation("RemnantOfTheWatchers", availableItems));
+			}
+			else
+			{
+				allItems.add(availableItems.get(itemToAddIndex));	//Items with no conditions
+				availableItems.remove(itemToAddIndex);
+			}
 		}
 		
 		return allItems;

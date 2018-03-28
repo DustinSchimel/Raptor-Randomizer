@@ -318,6 +318,10 @@ public class Controller
 		itemsList.add("RavenousHydra");
 		itemsList.add("TitanicHydra");
 		itemsList.add("SteraksGage");
+		
+		itemsList.add("RemnantOfTheAscended");
+		itemsList.add("RemnantOfTheAspect");
+		itemsList.add("RemnantOfTheWatchers");
 	}
 	
 	public void buildBootsList()
