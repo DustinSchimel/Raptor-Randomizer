@@ -307,21 +307,31 @@ public class Controller
 	
 	public void buildItemsList()
 	{
-		itemsList.add("AbyssalMask");
+		itemsList.add("AbyssalMask");	//Normal items
 		itemsList.add("AdaptiveHelm");
 		itemsList.add("ArchangelsStaff");
 		itemsList.add("ArdentCenser");
 		itemsList.add("AthenesUnholyGrail");
 		itemsList.add("BannerOfCommand");
 		
-		itemsList.add("RunaansHurricane");
-		itemsList.add("RavenousHydra");
+		itemsList.add("RunaansHurricane");	//Ranged only
+		
+		itemsList.add("RavenousHydra");		//Melee only
 		itemsList.add("TitanicHydra");
 		itemsList.add("SteraksGage");
 		
-		itemsList.add("RemnantOfTheAscended");
+		itemsList.add("RemnantOfTheAscended");	//One only
 		itemsList.add("RemnantOfTheAspect");
 		itemsList.add("RemnantOfTheWatchers");
+		
+		itemsList.add("SkirmishersSabreBloodrazor");	//One only && Smite only
+		itemsList.add("SkirmishersSabreCinderhulk");
+		itemsList.add("SkirmishersSabreRunicEchoes");
+		itemsList.add("SkirmishersSabreWarrior");
+		itemsList.add("StalkersBladeBloodrazor");
+		itemsList.add("StalkersBladeCinderhulk");
+		itemsList.add("StalkersBladeRunicEchoes");
+		itemsList.add("StalkersBladeWarrior");
 	}
 	
 	public void buildBootsList()

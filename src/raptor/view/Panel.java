@@ -210,8 +210,9 @@ public class Panel extends JPanel
 		Champion currentChampion = randomizeChampion();
 		ArrayList<String> summonerSpells = randomizeSummonerSpells();
 		ArrayList<String> runes = randomizeRunes();
-		ArrayList<String> items = randomizeItems(currentChampion);
+		ArrayList<String> items = randomizeItems(currentChampion, summonerSpells);
 		String boot = randomizeBoot();
+		
 		
 		nameLabel.setText(currentChampion.getName());
 		titleLabel.setText(currentChampion.getTitle());
@@ -287,7 +288,7 @@ public class Panel extends JPanel
 		ArrayList<String> currentSummonerSpellList = new ArrayList<String>();
 		Random randomNum = new Random();
 		int secondSpellindex = 0;
-		
+
 		currentSummonerSpellList.add(appController.getSummonerSpellList().get(randomNum.nextInt(appController.getSummonerSpellList().size())));
 		
 		while (currentSummonerSpellList.get(0).equals(currentSummonerSpellList.get(secondSpellindex)))
@@ -488,7 +489,7 @@ public class Panel extends JPanel
 		return boot;
 	}
 	
-	private ArrayList<String> randomizeItems(Champion currentChampion)
+	private ArrayList<String> randomizeItems(Champion currentChampion, ArrayList summonerSpells)
 	{
 		ArrayList<String> allItems = new ArrayList<String>();
 		List<String> availableItems = new ArrayList<String>(appController.getItemsList());
@@ -510,6 +511,18 @@ public class Panel extends JPanel
 			}
 		}
 		
+		if (!summonerSpells.get(0).equals("Smite") && !summonerSpells.get(1).equals("Smite"))
+		{
+			availableItems.remove(appController.findItemLocation("SkirmishersSabreBloodrazor", availableItems));
+			availableItems.remove(appController.findItemLocation("SkirmishersSabreCinderhulk", availableItems));
+			availableItems.remove(appController.findItemLocation("SkirmishersSabreRunicEchoes", availableItems));
+			availableItems.remove(appController.findItemLocation("SkirmishersSabreWarrior", availableItems));
+			availableItems.remove(appController.findItemLocation("StalkersBladeBloodrazor", availableItems));
+			availableItems.remove(appController.findItemLocation("StalkersBladeCinderhulk", availableItems));
+			availableItems.remove(appController.findItemLocation("StalkersBladeRunicEchoes", availableItems));
+			availableItems.remove(appController.findItemLocation("StalkersBladeWarrior", availableItems));
+		}
+		
 		Random randomNum = new Random();
 		
 		for (int index = 0; index < 6; index++)
@@ -523,6 +536,21 @@ public class Panel extends JPanel
 				availableItems.remove(appController.findItemLocation("RemnantOfTheAscended", availableItems));
 				availableItems.remove(appController.findItemLocation("RemnantOfTheAspect", availableItems));
 				availableItems.remove(appController.findItemLocation("RemnantOfTheWatchers", availableItems));
+			}
+			else if (availableItems.get(itemToAddIndex).equals("SkirmishersSabreBloodrazor")  || availableItems.get(itemToAddIndex).equals("SkirmishersSabreCinderhulk")
+				  || availableItems.get(itemToAddIndex).equals("SkirmishersSabreRunicEchoes") || availableItems.get(itemToAddIndex).equals("SkirmishersSabreWarrior")
+				  || availableItems.get(itemToAddIndex).equals("StalkersBladeBloodrazor")     || availableItems.get(itemToAddIndex).equals("StalkersBladeCinderhulk")
+				  || availableItems.get(itemToAddIndex).equals("StalkersBladeRunicEchoes")    || availableItems.get(itemToAddIndex).equals("StalkersBladeWarrior"))
+			{
+				allItems.add(availableItems.get(itemToAddIndex));
+				availableItems.remove(appController.findItemLocation("SkirmishersSabreBloodrazor", availableItems));
+				availableItems.remove(appController.findItemLocation("SkirmishersSabreCinderhulk", availableItems));
+				availableItems.remove(appController.findItemLocation("SkirmishersSabreRunicEchoes", availableItems));
+				availableItems.remove(appController.findItemLocation("SkirmishersSabreWarrior", availableItems));
+				availableItems.remove(appController.findItemLocation("StalkersBladeBloodrazor", availableItems));
+				availableItems.remove(appController.findItemLocation("StalkersBladeCinderhulk", availableItems));
+				availableItems.remove(appController.findItemLocation("StalkersBladeRunicEchoes", availableItems));
+				availableItems.remove(appController.findItemLocation("StalkersBladeWarrior", availableItems));
 			}
 			else
 			{
