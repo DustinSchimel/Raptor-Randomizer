@@ -4,9 +4,6 @@ import raptor.model.*;
 import raptor.view.Frame;
 
 import java.util.List;
-import java.util.Random;
-import java.awt.Image;
-import java.awt.Toolkit;
 import java.util.ArrayList;
 
 public class Controller
@@ -168,7 +165,6 @@ public class Controller
 		//Test ranged
 		//championList.add(new Nami());
 		//championList.add(new Nami());
-		
 	}
 	
 	public void buildSummonerSpellList()
@@ -357,14 +353,16 @@ public class Controller
 		return names;
 	}
 	
-	public List<Champion> getChampionList()
-	{
-		return championList;
-	}
-	
-	public List<String> getSummonerSpellList()
-	{
-		return summonerSpellList;
+	public int findItemLocation(String itemToFind, List availableItemsList)
+	{    
+	    for (int index = 0; index < availableItemsList.size(); index++)
+	    {
+	    	if (availableItemsList.get(index).equals(itemToFind))
+	    	{
+	    		return index;
+	    	}
+	    }
+	    return -1;
 	}
 	
 	public List<String> getSpecificList(String keystonePath)
@@ -423,6 +421,16 @@ public class Controller
 		}
 	}
 	
+	public List<Champion> getChampionList()
+	{
+		return championList;
+	}
+	
+	public List<String> getSummonerSpellList()
+	{
+		return summonerSpellList;
+	}
+	
 	public List<String> getItemsList()
 	{
 		return itemsList;
@@ -431,18 +439,6 @@ public class Controller
 	public List<String> getBootsList()
 	{
 		return bootsList;
-	}
-	
-	public int findItemLocation(String itemToFind, List availableItemsList)
-	{    
-	    for (int index = 0; index < availableItemsList.size(); index++)
-	    {
-	    	if (availableItemsList.get(index).equals(itemToFind))
-	    	{
-	    		return index;
-	    	}
-	    }
-	    return -1;
 	}
 	
 	public void start()

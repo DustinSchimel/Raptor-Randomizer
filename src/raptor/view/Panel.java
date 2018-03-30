@@ -5,9 +5,7 @@ import raptor.model.Champion;
 
 import javax.swing.*;
 import java.awt.Color;
-import java.awt.Dimension;
 import java.awt.Font;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.util.ArrayList;
@@ -147,12 +145,12 @@ public class Panel extends JPanel
 		this.add(runes2Slot1);
 		this.add(runes2Slot2);
 		
-		this.add(item1);					//Testing
-		this.add(item2);					//Testing
-		this.add(item3);					//Testing
-		this.add(item4);					//Testing
-		this.add(item5);					//Testing
-		this.add(item6);					//Testing
+		this.add(item1);
+		this.add(item2);
+		this.add(item3);
+		this.add(item4);
+		this.add(item5);
+		this.add(item6);
 		
 		this.add(randomizeButton);
 	}
@@ -243,8 +241,17 @@ public class Panel extends JPanel
 		runes2Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
 								 + runes.get(5) + "Picture.png")));
 		
-		item1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
+		
+		if (currentChampion.getName().equals("Viktor"))
+		{
+			item1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
+				 + "PerfectHexCorePicture.png")));
+		}
+		else
+		{
+			item1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
 				 + items.get(0) + "Picture.png")));
+		}
 		
 		item2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
 				 + items.get(1) + "Picture.png")));
@@ -260,7 +267,7 @@ public class Panel extends JPanel
 		
 		if (currentChampion.getName().equals("Cassiopeia"))
 		{
-			item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" //Finished Version
+			item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/"
 					 + items.get(5) + "Picture.png")));
 		}
 		else
