@@ -155,7 +155,6 @@ public class Panel extends JPanel
 		this.add(item6);					//Testing
 		
 		this.add(randomizeButton);
-		
 	}
 	
 	private void setupLayout()
@@ -269,6 +268,8 @@ public class Panel extends JPanel
 			item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
 					 + boot + "Picture.png")));
 		}
+		
+		repaint();
 	}
 	
 	private Champion randomizeChampion()
