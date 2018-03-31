@@ -160,6 +160,16 @@ public class Controller
 		championList.add(new Sejuani());
 		championList.add(new Shaco());
 		championList.add(new Shen());
+		championList.add(new Shyvana());
+		championList.add(new Singed());
+		championList.add(new Sion());
+		championList.add(new Sivir());
+		championList.add(new Skarner());
+		championList.add(new Sona());
+		championList.add(new Soraka());
+		championList.add(new Swain());
+		championList.add(new Syndra());
+		championList.add(new TahmKench());
 		
 		//Test multiform
 		//championList.add(new Jayce());
@@ -326,6 +336,16 @@ public class Controller
 		itemsList.add("FrozenHeart");
 		itemsList.add("FrozenMallet");
 		itemsList.add("GargoyleStoneplate");
+		itemsList.add("GuardianAngel");
+		itemsList.add("GuinsoosRageblade");
+		itemsList.add("HextechGLP-800");
+		itemsList.add("HextechGunblade");
+		itemsList.add("HextechProtobelt-01");
+		itemsList.add("IcebornGauntlet");
+		itemsList.add("InfinityEdge");
+		itemsList.add("KnightsVow");
+		itemsList.add("LiandrysTorment");
+		itemsList.add("LichBane");
 		
 		itemsList.add("RunaansHurricane");	//Ranged only
 		
