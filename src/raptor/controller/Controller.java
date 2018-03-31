@@ -153,6 +153,16 @@ public class Controller
 		championList.add(new Poppy());
 		championList.add(new Quinn());
 		championList.add(new Rakan());
+		championList.add(new Rammus());
+		championList.add(new RekSai());
+		championList.add(new Renekton());
+		championList.add(new Rengar());
+		championList.add(new Riven());
+		championList.add(new Rumble());
+		championList.add(new Ryze());
+		championList.add(new Sejuani());
+		championList.add(new Shaco());
+		championList.add(new Shen());
 		
 		//Test multiform
 		//championList.add(new Jayce());
