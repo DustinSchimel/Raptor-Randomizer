@@ -59,9 +59,6 @@ public class Controller
 		
 		buildItemsList();
 		buildBootsList();
-		
-		//Image icon = Toolkit.getDefaultToolkit().getImage("/raptor/view/images/AppIcon.png");
-	    //appFrame.setIconImage(icon);        Trying to get this to work
 	}
 	
 	public void buildChampionList()
