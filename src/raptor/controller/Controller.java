@@ -319,6 +319,16 @@ public class Controller
 		itemsList.add("ArdentCenser");
 		itemsList.add("AthenesUnholyGrail");
 		itemsList.add("BannerOfCommand");
+		itemsList.add("BansheesVeil");
+		itemsList.add("BladeOfTheRuinedKing");
+		itemsList.add("DeadMansPlate");
+		itemsList.add("DeathsDance");
+		itemsList.add("DuskbladeOfDraktharr");
+		itemsList.add("EdgeOfNight");
+		itemsList.add("EssenceReaver");
+		itemsList.add("FrozenHeart");
+		itemsList.add("FrozenMallet");
+		itemsList.add("GargoyleStoneplate");
 		
 		itemsList.add("RunaansHurricane");	//Ranged only
 		
