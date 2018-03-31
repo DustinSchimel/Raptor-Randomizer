@@ -170,6 +170,9 @@ public class Controller
 		championList.add(new Swain());
 		championList.add(new Syndra());
 		championList.add(new TahmKench());
+		championList.add(new Taliyah());
+		championList.add(new Talon());
+		championList.add(new Taric());
 		
 		//Test multiform
 		//championList.add(new Jayce());
