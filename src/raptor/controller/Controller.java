@@ -323,7 +323,7 @@ public class Controller
 	
 	public void buildItemsList()
 	{
-		itemsList.add("AbyssalMask");	//Normal items
+		itemsList.add("AbyssalMask");	//Normal items	|| Hexcore isn't added due to it not needing to be
 		itemsList.add("AdaptiveHelm");
 		itemsList.add("ArchangelsStaff");
 		itemsList.add("ArdentCenser");
@@ -349,6 +349,43 @@ public class Controller
 		itemsList.add("KnightsVow");
 		itemsList.add("LiandrysTorment");
 		itemsList.add("LichBane");
+		itemsList.add("LocketOfTheIronSolari");
+		itemsList.add("LordDominiksRegards");
+		itemsList.add("LudensEcho");
+		itemsList.add("Manamune");
+		itemsList.add("MawOfMalmortius");
+		itemsList.add("MejaisSoulstealer");
+		itemsList.add("MercurialScimitar");
+		itemsList.add("MikaelsCrucible");
+		itemsList.add("Morellonomicon");
+		itemsList.add("MortalReminder");
+		itemsList.add("NashorsTooth");
+		itemsList.add("Ohmwrecker");
+		itemsList.add("PhantomDancer");
+		itemsList.add("RabadonsDeathcap");
+		itemsList.add("RanduinsOmen");
+		itemsList.add("RapidFirecannon");
+		itemsList.add("Redemption");
+		itemsList.add("RighteousGlory");
+		itemsList.add("RodOfAges");
+		itemsList.add("RylaisCrystalScepter");
+		itemsList.add("ShurelyasReverie");
+		itemsList.add("Spellbinder");
+		itemsList.add("SpiritVisage");
+		itemsList.add("StatikkShiv");
+		itemsList.add("SunfireCape");
+		itemsList.add("TheBlackCleaver");
+		itemsList.add("TheBloodthirster");
+		itemsList.add("Thornmail");
+		itemsList.add("TrinityForce");
+		itemsList.add("TwinShadows");
+		itemsList.add("VoidStaff");
+		itemsList.add("WarmogsArmor");
+		itemsList.add("WitsEnd");
+		itemsList.add("YoumuusGhostblade");
+		itemsList.add("ZekesConvergence");
+		itemsList.add("ZhonyasHourglass");
+		itemsList.add("ZzRotPortal");
 		
 		itemsList.add("RunaansHurricane");	//Ranged only
 		
