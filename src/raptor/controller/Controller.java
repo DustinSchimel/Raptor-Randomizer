@@ -173,6 +173,36 @@ public class Controller
 		championList.add(new Taliyah());
 		championList.add(new Talon());
 		championList.add(new Taric());
+		championList.add(new Teemo());
+		championList.add(new Thresh());
+		championList.add(new Tristana());
+		championList.add(new Trundle());
+		championList.add(new Tryndamere());
+		championList.add(new TwistedFate());
+		championList.add(new Twitch());
+		championList.add(new Udyr());
+		championList.add(new Urgot());
+		championList.add(new Varus());
+		championList.add(new Vayne());
+		championList.add(new Veigar());
+		championList.add(new VelKoz());
+		championList.add(new Vi());
+		championList.add(new Viktor());
+		championList.add(new Vladimir());
+		championList.add(new Volibear());
+		championList.add(new Warwick());
+		championList.add(new Wukong());
+		championList.add(new Xayah());
+		championList.add(new Xerath());
+		championList.add(new XinZhao());
+		championList.add(new Yasuo());
+		championList.add(new Yorick());
+		championList.add(new Zac());
+		championList.add(new Zed());
+		championList.add(new Ziggs());
+		championList.add(new Zilean());
+		championList.add(new Zoe());
+		championList.add(new Zyra());
 		
 		//Test multiform
 		//championList.add(new Jayce());
@@ -185,6 +215,14 @@ public class Controller
 		//Test ranged
 		//championList.add(new Nami());
 		//championList.add(new Nami());
+		
+		//Test Cassiopeia
+		//championList.add(new Cassiopeia());
+		//championList.add(new Cassiopeia());
+		
+		//Test Viktor
+		//championList.add(new Viktor());
+		//championList.add(new Viktor());
 	}
 	
 	public void buildSummonerSpellList()
