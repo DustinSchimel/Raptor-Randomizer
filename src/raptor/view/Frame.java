@@ -26,7 +26,7 @@ public class Frame extends JFrame
 		appPanel.setBackground(new Color(20, 23, 63));
 		this.setContentPane(appPanel);
 		this.setTitle("Raptor Randomizer");
-		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/raptor/view/images/AppIcon.png")));
+		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/raptor/view/images/AppIcon_32x32.png")));
 		this.setResizable(false);
 		this.setSize(650, 425);
 		this.setVisible(true);
