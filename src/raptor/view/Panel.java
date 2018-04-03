@@ -38,6 +38,8 @@ public class Panel extends JPanel
 	private JLabel item5;
 	private JLabel item6;
 	
+	private JLabel version;
+	
 	private JButton randomizeButton;
 	
 	public Panel(Controller appController)
@@ -49,7 +51,7 @@ public class Panel extends JPanel
 		
 		nameLabel = new JLabel("Name", SwingConstants.CENTER);
 		nameLabel.setForeground(Color.WHITE);
-		nameLabel.setFont(new Font("Serif", Font.PLAIN, 20));
+		nameLabel.setFont(new Font("Serif", Font.PLAIN, 26));
 		
 		titleLabel = new JLabel("Title", SwingConstants.CENTER);
 		titleLabel.setForeground(Color.WHITE);
@@ -117,6 +119,9 @@ public class Panel extends JPanel
 		item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/64x64Box.png")));
 		item6.setHorizontalAlignment(JLabel.CENTER);
 		
+		version = new JLabel("v1.0.0", SwingConstants.CENTER);
+		version.setForeground(Color.GRAY);
+		version.setFont(new Font("Arial", Font.PLAIN, 10));
 		
 		randomizeButton = new JButton("Randomize");
 		randomizeButton.setFont(new Font("Serif", Font.PLAIN, 15));
@@ -129,8 +134,6 @@ public class Panel extends JPanel
 	
 	private void setupPanel()
 	{
-		this.setLayout(appLayout);
-		
 		this.add(nameLabel);
 		this.add(titleLabel);
 		this.add(championPicLabel);
@@ -152,54 +155,55 @@ public class Panel extends JPanel
 		this.add(item5);
 		this.add(item6);
 		
+		this.add(version);
+		
 		this.add(randomizeButton);
 	}
 	
 	private void setupLayout()
 	{
-		appLayout.putConstraint(SpringLayout.EAST, championPicLabel, -440, SpringLayout.EAST, this);
-		appLayout.putConstraint(SpringLayout.WEST, championPicLabel, 10, SpringLayout.WEST, this);
+		this.setLayout(appLayout);
+		appLayout.putConstraint(SpringLayout.SOUTH, version, -10, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.EAST, version, -10, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.WEST, randomizeButton, 0, SpringLayout.WEST, summonerSpell1);
+		appLayout.putConstraint(SpringLayout.EAST, randomizeButton, 0, SpringLayout.EAST, summonerSpell2);
+		appLayout.putConstraint(SpringLayout.NORTH, summonerSpell2, 0, SpringLayout.NORTH, summonerSpell1);
+		appLayout.putConstraint(SpringLayout.WEST, summonerSpell2, 18, SpringLayout.EAST, summonerSpell1);
+		appLayout.putConstraint(SpringLayout.SOUTH, summonerSpell1, -16, SpringLayout.NORTH, item1);
+		appLayout.putConstraint(SpringLayout.EAST, summonerSpell1, -298, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, item1, 2, SpringLayout.SOUTH, item3);
+		appLayout.putConstraint(SpringLayout.EAST, item5, -257, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.EAST, item4, -340, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.EAST, item6, -30, SpringLayout.WEST, runes1Slot3);
+		appLayout.putConstraint(SpringLayout.NORTH, item3, 104, SpringLayout.SOUTH, titleLabel);
+		appLayout.putConstraint(SpringLayout.SOUTH, item2, 0, SpringLayout.SOUTH, item1);
+		appLayout.putConstraint(SpringLayout.EAST, item2, 0, SpringLayout.EAST, item5);
+		appLayout.putConstraint(SpringLayout.WEST, item1, 0, SpringLayout.WEST, item4);
+		appLayout.putConstraint(SpringLayout.SOUTH, item4, 0, SpringLayout.SOUTH, runes1Slot3);
+		appLayout.putConstraint(SpringLayout.NORTH, item5, 0, SpringLayout.NORTH, runes1Slot3);
+		appLayout.putConstraint(SpringLayout.EAST, item3, 0, SpringLayout.EAST, item6);
+		appLayout.putConstraint(SpringLayout.WEST, nameLabel, 0, SpringLayout.WEST, titleLabel);
 		appLayout.putConstraint(SpringLayout.SOUTH, nameLabel, -6, SpringLayout.NORTH, titleLabel);
-		appLayout.putConstraint(SpringLayout.NORTH, titleLabel, 52, SpringLayout.NORTH, this);
-		appLayout.putConstraint(SpringLayout.NORTH, nameLabel, 20, SpringLayout.NORTH, this);
-		appLayout.putConstraint(SpringLayout.WEST, titleLabel, 11, SpringLayout.EAST, championPicLabel);
-		appLayout.putConstraint(SpringLayout.WEST, nameLabel, 11, SpringLayout.EAST, championPicLabel);
-		appLayout.putConstraint(SpringLayout.NORTH, championPicLabel, 10, SpringLayout.NORTH, this);
-		appLayout.putConstraint(SpringLayout.SOUTH, championPicLabel, -10, SpringLayout.SOUTH, this);
-		appLayout.putConstraint(SpringLayout.NORTH, summonerSpell2, 17, SpringLayout.SOUTH, titleLabel);
-		appLayout.putConstraint(SpringLayout.WEST, summonerSpell2, 357, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.SOUTH, summonerSpell1, 0, SpringLayout.SOUTH, summonerSpell2);
-		appLayout.putConstraint(SpringLayout.EAST, summonerSpell1, -27, SpringLayout.WEST, summonerSpell2);
-		appLayout.putConstraint(SpringLayout.EAST, runes1Slot1, -80, SpringLayout.EAST, this);
-		appLayout.putConstraint(SpringLayout.WEST, runesKeystone, 0, SpringLayout.WEST, runes1Slot1);
-		appLayout.putConstraint(SpringLayout.SOUTH, runesKeystone, -6, SpringLayout.NORTH, runes1Slot1);
-		appLayout.putConstraint(SpringLayout.WEST, randomizeButton, 63, SpringLayout.EAST, championPicLabel);
-		appLayout.putConstraint(SpringLayout.EAST, randomizeButton, -239, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.WEST, titleLabel, 0, SpringLayout.EAST, championPicLabel);
+		appLayout.putConstraint(SpringLayout.EAST, nameLabel, -144, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, item6, 0, SpringLayout.SOUTH, runes1Slot3);
+		appLayout.putConstraint(SpringLayout.EAST, titleLabel, 0, SpringLayout.WEST, runesKeystone);
+		appLayout.putConstraint(SpringLayout.EAST, runesKeystone, -80, SpringLayout.EAST, this);
+		appLayout.putConstraint(SpringLayout.NORTH, titleLabel, 63, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, randomizeButton, 0, SpringLayout.SOUTH, championPicLabel);
+		appLayout.putConstraint(SpringLayout.SOUTH, runesKeystone, -273, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.NORTH, runes2Slot2, 0, SpringLayout.NORTH, runes1Slot2);
 		appLayout.putConstraint(SpringLayout.WEST, runes2Slot2, 6, SpringLayout.EAST, runes1Slot2);
-		appLayout.putConstraint(SpringLayout.SOUTH, runes2Slot2, 0, SpringLayout.SOUTH, runes1Slot2);
-		appLayout.putConstraint(SpringLayout.NORTH, runes1Slot3, 6, SpringLayout.SOUTH, runes1Slot2);
+		appLayout.putConstraint(SpringLayout.NORTH, runes2Slot1, 0, SpringLayout.NORTH, runes1Slot1);
 		appLayout.putConstraint(SpringLayout.WEST, runes2Slot1, 6, SpringLayout.EAST, runes1Slot1);
-		appLayout.putConstraint(SpringLayout.SOUTH, runes2Slot1, 0, SpringLayout.SOUTH, runes1Slot1);
-		appLayout.putConstraint(SpringLayout.SOUTH, runes1Slot1, -6, SpringLayout.NORTH, runes1Slot2);
-		appLayout.putConstraint(SpringLayout.SOUTH, runes1Slot2, -104, SpringLayout.SOUTH, this);
-		appLayout.putConstraint(SpringLayout.EAST, titleLabel, -186, SpringLayout.EAST, this);
-		appLayout.putConstraint(SpringLayout.EAST, nameLabel, -186, SpringLayout.EAST, this);
-		appLayout.putConstraint(SpringLayout.WEST, runes1Slot3, 95, SpringLayout.EAST, randomizeButton);
-		appLayout.putConstraint(SpringLayout.NORTH, item2, 0, SpringLayout.NORTH, item1);
-		appLayout.putConstraint(SpringLayout.WEST, item2, 24, SpringLayout.EAST, item1);
-		appLayout.putConstraint(SpringLayout.WEST, runes1Slot2, 42, SpringLayout.EAST, item3);
-		appLayout.putConstraint(SpringLayout.NORTH, item3, 0, SpringLayout.NORTH, item1);
-		appLayout.putConstraint(SpringLayout.EAST, item3, 0, SpringLayout.EAST, nameLabel);
-		appLayout.putConstraint(SpringLayout.WEST, item1, 221, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.SOUTH, item1, -159, SpringLayout.SOUTH, this);
-		appLayout.putConstraint(SpringLayout.EAST, item4, 0, SpringLayout.EAST, item1);
-		appLayout.putConstraint(SpringLayout.SOUTH, item6, 0, SpringLayout.SOUTH, item4);
-		appLayout.putConstraint(SpringLayout.EAST, item6, 0, SpringLayout.EAST, nameLabel);
-		appLayout.putConstraint(SpringLayout.SOUTH, item4, 0, SpringLayout.SOUTH, item5);
-		appLayout.putConstraint(SpringLayout.NORTH, item5, 16, SpringLayout.SOUTH, item2);
-		appLayout.putConstraint(SpringLayout.EAST, item5, 0, SpringLayout.EAST, item2);
-		appLayout.putConstraint(SpringLayout.NORTH, randomizeButton, 35, SpringLayout.SOUTH, item4);
-		appLayout.putConstraint(SpringLayout.SOUTH, randomizeButton, -18, SpringLayout.SOUTH, this);
+		appLayout.putConstraint(SpringLayout.NORTH, runes1Slot3, 6, SpringLayout.SOUTH, runes1Slot2);
+		appLayout.putConstraint(SpringLayout.EAST, runes1Slot3, 0, SpringLayout.EAST, runesKeystone);
+		appLayout.putConstraint(SpringLayout.NORTH, runes1Slot2, 6, SpringLayout.SOUTH, runes1Slot1);
+		appLayout.putConstraint(SpringLayout.EAST, runes1Slot2, 0, SpringLayout.EAST, runesKeystone);
+		appLayout.putConstraint(SpringLayout.NORTH, runes1Slot1, 6, SpringLayout.SOUTH, runesKeystone);
+		appLayout.putConstraint(SpringLayout.WEST, runes1Slot1, 0, SpringLayout.WEST, runesKeystone);
+		appLayout.putConstraint(SpringLayout.NORTH, championPicLabel, 10, SpringLayout.NORTH, this);
+		appLayout.putConstraint(SpringLayout.WEST, championPicLabel, 10, SpringLayout.WEST, this);
 	}
 	
 	private void updateInfo()

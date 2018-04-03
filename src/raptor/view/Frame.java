@@ -28,7 +28,7 @@ public class Frame extends JFrame
 		this.setTitle("Raptor Randomizer");
 		this.setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("/raptor/view/images/AppIcon_32x32.png")));
 		this.setResizable(false);
-		this.setSize(650, 425);
+		this.setSize(650, 429);
 		this.setVisible(true);
 	}
 	
