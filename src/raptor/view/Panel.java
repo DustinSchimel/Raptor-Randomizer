@@ -119,7 +119,7 @@ public class Panel extends JPanel
 		item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/64x64Box.png")));
 		item6.setHorizontalAlignment(JLabel.CENTER);
 
-		version = new JLabel("v1.0.1", SwingConstants.CENTER);
+		version = new JLabel("v1.0.2", SwingConstants.CENTER);
 		version.setForeground(Color.GRAY);
 		version.setFont(new Font("Arial", Font.PLAIN, 10));
 		

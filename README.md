@@ -11,9 +11,10 @@ Raptor Randomizer is an applet that was inspired by a website called Ultimate Br
 This app is currently being developed and is not at a state where I feel comfortable pushing a release. It will at least be ready in April of 2018.
 
 ### Todos
- - Complete design
- - Add random skill order
- - Add champion filter
+ - Instruction page
+ - Better design
+ - Random skill order
+ - Champion filter
  - ARAM and TT support
  - Ability to save builds
  
