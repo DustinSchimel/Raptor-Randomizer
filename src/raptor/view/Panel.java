@@ -38,8 +38,6 @@ public class Panel extends JPanel
 	private JLabel item5;
 	private JLabel item6;
 	
-	private JLabel version;
-	
 	private JButton randomizeButton;
 	
 	public Panel(Controller appController)
@@ -119,10 +117,6 @@ public class Panel extends JPanel
 		item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/64x64Box.png")));
 		item6.setHorizontalAlignment(JLabel.CENTER);
 
-		version = new JLabel("v1.0.2", SwingConstants.CENTER);
-		version.setForeground(Color.GRAY);
-		version.setFont(new Font("Arial", Font.PLAIN, 10));
-		
 		randomizeButton = new JButton("Randomize");
 		randomizeButton.setFont(new Font("Serif", Font.PLAIN, 15));
 		randomizeButton.setFocusPainted(false);
@@ -154,8 +148,6 @@ public class Panel extends JPanel
 		this.add(item4);
 		this.add(item5);
 		this.add(item6);
-		
-		this.add(version);
 		
 		this.add(randomizeButton);
 	}
@@ -198,8 +190,6 @@ public class Panel extends JPanel
 		appLayout.putConstraint(SpringLayout.WEST, runes1Slot1, 0, SpringLayout.WEST, runesKeystone);
 		appLayout.putConstraint(SpringLayout.NORTH, championPicLabel, 10, SpringLayout.NORTH, this);
 		appLayout.putConstraint(SpringLayout.WEST, championPicLabel, 10, SpringLayout.WEST, this);
-		appLayout.putConstraint(SpringLayout.SOUTH, version, 0, SpringLayout.SOUTH, championPicLabel);
-		appLayout.putConstraint(SpringLayout.EAST, version, 0, SpringLayout.EAST, runes2Slot1);
 		appLayout.putConstraint(SpringLayout.EAST, item5, -260, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.EAST, summonerSpell1, -301, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.EAST, item6, -33, SpringLayout.WEST, runes1Slot3);
