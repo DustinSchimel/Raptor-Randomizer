@@ -196,6 +196,11 @@ public class Panel extends JPanel
 		appLayout.putConstraint(SpringLayout.EAST, item4, -343, SpringLayout.EAST, this);
 	}
 	
+	
+	
+	
+	
+	//startAbstraction
 	private void updateInfo()
 	{
 		Champion currentChampion = randomizeChampion();
@@ -207,6 +212,8 @@ public class Panel extends JPanel
 		
 		nameLabel.setText(currentChampion.getName());
 		titleLabel.setText(currentChampion.getTitle());
+		
+		//endAbstraction
 		
 		championPicLabel.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/champions/" + currentChampion.getNameForFile() 
 								 + "Picture.jpg")));
@@ -491,6 +498,7 @@ public class Panel extends JPanel
 		return boot;
 	}
 	
+	//startComplexity
 	private ArrayList<String> randomizeItems(Champion currentChampion, ArrayList summonerSpells)
 	{
 		ArrayList<String> allItems = new ArrayList<String>();
@@ -563,6 +571,7 @@ public class Panel extends JPanel
 		
 		return allItems;
 	}
+	//endComplexity
 	
 	private void setupListeners()
 	{
