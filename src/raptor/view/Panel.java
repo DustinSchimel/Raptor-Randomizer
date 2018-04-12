@@ -199,21 +199,21 @@ public class Panel extends JPanel
 	
 	
 	
-	
+	//startComplexity
 	//startAbstraction
 	private void updateInfo()
 	{
-		Champion currentChampion = randomizeChampion();
+		Champion currentChampion = randomizeChampion();								//All these methods pick components from lists based on conditions as well as randomization
 		ArrayList<String> summonerSpells = randomizeSummonerSpells();
 		ArrayList<String> runes = randomizeRunes();
-		ArrayList<String> items = randomizeItems(currentChampion, summonerSpells);
+		ArrayList<String> items = randomizeItems(currentChampion, summonerSpells);	//Items are randomly chosen based on current champion as well as summoner spells
 		String boot = randomizeBoot();
 		
+		//endAbstraction
 		
+		//The code below displays certain images depending on what's in the lists
 		nameLabel.setText(currentChampion.getName());
 		titleLabel.setText(currentChampion.getTitle());
-		
-		//endAbstraction
 		
 		championPicLabel.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/champions/" + currentChampion.getNameForFile() 
 								 + "Picture.jpg")));
@@ -243,6 +243,7 @@ public class Panel extends JPanel
 								 + runes.get(5) + "Picture.png")));
 		
 		
+		//This section uses logic by checking if the currently selected champion is "Viktor" and if it is, it displays a certain image for them
 		if (currentChampion.getName().equals("Viktor"))
 		{
 			item1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
@@ -266,6 +267,7 @@ public class Panel extends JPanel
 		item5.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
 				 + items.get(4) + "Picture.png")));
 		
+		//This section uses logic by checking if the currently selected champion is "Cassiopeia" and if it is, it then takes another item for the lists instead of boots
 		if (currentChampion.getName().equals("Cassiopeia"))
 		{
 			item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/"
@@ -279,6 +281,7 @@ public class Panel extends JPanel
 		
 		repaint();
 	}
+	//endComplexity
 	
 	private Champion randomizeChampion()
 	{
@@ -498,7 +501,6 @@ public class Panel extends JPanel
 		return boot;
 	}
 	
-	//startComplexity
 	private ArrayList<String> randomizeItems(Champion currentChampion, ArrayList summonerSpells)
 	{
 		ArrayList<String> allItems = new ArrayList<String>();
@@ -571,7 +573,6 @@ public class Panel extends JPanel
 		
 		return allItems;
 	}
-	//endComplexity
 	
 	private void setupListeners()
 	{
