@@ -197,8 +197,6 @@ public class Panel extends JPanel
 	}
 	
 	
-	
-	
 	//startComplexity
 	//startAbstraction
 	private void updateInfo()
@@ -206,11 +204,10 @@ public class Panel extends JPanel
 		Champion currentChampion = randomizeChampion();								//All these methods pick components from lists based on conditions as well as randomization
 		ArrayList<String> summonerSpells = randomizeSummonerSpells();
 		ArrayList<String> runes = randomizeRunes();
-		ArrayList<String> items = randomizeItems(currentChampion, summonerSpells);	//Items are randomly chosen based on current champion as well as summoner spells
+		ArrayList<String> items = randomizeItems(currentChampion, summonerSpells);	//Items are randomly chosen based on current character as well as current spells
 		String boot = randomizeBoot();
 		
 		//endAbstraction
-		
 		//The code below displays certain images depending on what's in the lists
 		nameLabel.setText(currentChampion.getName());
 		titleLabel.setText(currentChampion.getTitle());
@@ -242,8 +239,7 @@ public class Panel extends JPanel
 		runes2Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
 								 + runes.get(5) + "Picture.png")));
 		
-		
-		//This section uses logic by checking if the currently selected champion is "Viktor" and if it is, it displays a certain image for them
+		//This section uses logic by checking if the currently selected character is 'Viktor' and if it is, it displays a certain image for them
 		if (currentChampion.getName().equals("Viktor"))
 		{
 			item1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
@@ -267,7 +263,7 @@ public class Panel extends JPanel
 		item5.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
 				 + items.get(4) + "Picture.png")));
 		
-		//This section uses logic by checking if the currently selected champion is "Cassiopeia" and if it is, it then takes another item for the lists instead of boots
+		//This section uses logic by checking if the currently selected character is 'Cassiopeia' and if it is, it then takes another item from the lists instead of displaying boots
 		if (currentChampion.getName().equals("Cassiopeia"))
 		{
 			item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/"
@@ -278,10 +274,10 @@ public class Panel extends JPanel
 			item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
 					 + boot + "Picture.png")));
 		}
+		//endComplexity
 		
 		repaint();
 	}
-	//endComplexity
 	
 	private Champion randomizeChampion()
 	{
