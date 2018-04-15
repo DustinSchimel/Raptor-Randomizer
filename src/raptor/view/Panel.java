@@ -310,14 +310,14 @@ public class Panel extends JPanel
 	
 	private ArrayList<String> randomizeRunes()
 	{
-		ArrayList<String> allRunes = new ArrayList<String>();
+		ArrayList<String> allRunes = new ArrayList<String>();	//List that contains all the runes (The circular images on the running app)
 		Random randomNum = new Random();
 		
 		int runesPathIndex = randomNum.nextInt(5);
 		String keystonePath;
 		String secondPath;
 		
-		if(runesPathIndex == 0)
+		if(runesPathIndex == 0)	//Picking the first major rune path, use of logical concepts
 		{
 			keystonePath = "Precision";
 			secondPath = appController.getSpecificListWithout(keystonePath).get(randomNum.nextInt(4));
@@ -348,12 +348,12 @@ public class Panel extends JPanel
 			secondPath = "";
 		}
 		
-		if (keystonePath.equals("Precision"))							//Adds the keystone to the list
+		if (keystonePath.equals("Precision"))
 		{
 			allRunes.add(appController.getSpecificList(keystonePath)
 					.get(randomNum.nextInt(4)));
 			
-			allRunes.add(appController.getSpecificList(keystonePath)	//Adds the three minor runes
+			allRunes.add(appController.getSpecificList(keystonePath)
 					.get(randomNum.nextInt(3) + 4));
 			
 			allRunes.add(appController.getSpecificList(keystonePath)
@@ -367,13 +367,14 @@ public class Panel extends JPanel
 			allRunes.add(appController.getSpecificList(keystonePath)
 					.get(randomNum.nextInt(3)));
 			
-			for (int index = 0, addition = 3; index < 3; index++, addition = addition + 3)	//Adds the three minor runes
+			for (int index = 0, addition = 3; index < 3; index++, addition = addition + 3)	//Main use of mathematical concepts (adding the minor runes)
 			{
 				allRunes.add(appController.getSpecificList(keystonePath)
 						.get(randomNum.nextInt(3) + addition));
 			}
 		}
-			
+		
+		//More use of the mathematical concepts
 		int randomRow = randomNum.nextInt(3);
 		int randomNextRow = randomNum.nextInt(2);
 		
