@@ -196,8 +196,6 @@ public class Panel extends JPanel
 		appLayout.putConstraint(SpringLayout.EAST, item4, -343, SpringLayout.EAST, this);
 	}
 	
-	
-	//startComplexity
 	//startAbstraction
 	private void updateInfo()
 	{
@@ -274,7 +272,6 @@ public class Panel extends JPanel
 			item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
 					 + boot + "Picture.png")));
 		}
-		//endComplexity
 		
 		repaint();
 	}
@@ -297,12 +294,14 @@ public class Panel extends JPanel
 		Random randomNum = new Random();
 		int secondSpellindex = 0;
 
-		currentSummonerSpellList.add(appController.getSummonerSpellList().get(randomNum.nextInt(appController.getSummonerSpellList().size())));
+		currentSummonerSpellList.add(appController.getSummonerSpellList()
+				.get(randomNum.nextInt(appController.getSummonerSpellList().size())));
 		
 		while (currentSummonerSpellList.get(0).equals(currentSummonerSpellList.get(secondSpellindex)))
 		{
 			secondSpellindex++;
-			currentSummonerSpellList.add(appController.getSummonerSpellList().get(randomNum.nextInt(appController.getSummonerSpellList().size())));
+			currentSummonerSpellList.add(appController.getSummonerSpellList()
+					.get(randomNum.nextInt(appController.getSummonerSpellList().size())));
 		}
 		
 		return currentSummonerSpellList;
@@ -498,11 +497,15 @@ public class Panel extends JPanel
 		return boot;
 	}
 	
+	
+	
+	
+	//startComplexity
 	private ArrayList<String> randomizeItems(Champion currentChampion, ArrayList summonerSpells)
 	{
 		ArrayList<String> allItems = new ArrayList<String>();
 		List<String> availableItems = new ArrayList<String>(appController.getItemsList());
-		
+														//Logic concepts
 		if (currentChampion.isChampionMelee() == true)	//If champion is melee
 		{
 			if (currentChampion.isFormChanger() == false)
@@ -514,7 +517,7 @@ public class Panel extends JPanel
 		{
 			if (currentChampion.isFormChanger() == false)
 			{
-				availableItems.remove(appController.findItemLocation("RavenousHydra", availableItems));	//May have to make it so both hydra and ravenous cannot both be bought
+				availableItems.remove(appController.findItemLocation("RavenousHydra", availableItems));
 				availableItems.remove(appController.findItemLocation("TitanicHydra", availableItems));
 				availableItems.remove(appController.findItemLocation("SteraksGage", availableItems));
 			}
@@ -532,7 +535,7 @@ public class Panel extends JPanel
 			availableItems.remove(appController.findItemLocation("StalkersBladeWarrior", availableItems));
 		}
 		
-		Random randomNum = new Random();
+		Random randomNum = new Random();	//Mathematical concepts
 		
 		for (int index = 0; index < 6; index++)
 		{
@@ -570,6 +573,7 @@ public class Panel extends JPanel
 		
 		return allItems;
 	}
+	//endComplexity
 	
 	private void setupListeners()
 	{
