@@ -196,6 +196,11 @@ public class Panel extends JPanel
 		appLayout.putConstraint(SpringLayout.EAST, item4, -343, SpringLayout.EAST, this);
 	}
 	
+	
+	
+	
+	
+	
 	//startAbstraction
 	private void updateInfo()
 	{
