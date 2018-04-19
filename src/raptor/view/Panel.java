@@ -38,6 +38,8 @@ public class Panel extends JPanel
 	private JLabel item5;
 	private JLabel item6;
 	
+	private JLabel version;
+	
 	private JButton randomizeButton;
 	
 	public Panel(Controller appController)
@@ -117,6 +119,10 @@ public class Panel extends JPanel
 		item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/64x64Box.png")));
 		item6.setHorizontalAlignment(JLabel.CENTER);
 
+		version = new JLabel("v1.0.2", SwingConstants.CENTER);
+		version.setForeground(Color.GRAY);
+		version.setFont(new Font("Arial", Font.PLAIN, 10));
+		
 		randomizeButton = new JButton("Randomize");
 		randomizeButton.setFont(new Font("Serif", Font.PLAIN, 15));
 		randomizeButton.setFocusPainted(false);
@@ -148,6 +154,8 @@ public class Panel extends JPanel
 		this.add(item4);
 		this.add(item5);
 		this.add(item6);
+		
+		this.add(version);
 		
 		this.add(randomizeButton);
 	}
@@ -190,28 +198,23 @@ public class Panel extends JPanel
 		appLayout.putConstraint(SpringLayout.WEST, runes1Slot1, 0, SpringLayout.WEST, runesKeystone);
 		appLayout.putConstraint(SpringLayout.NORTH, championPicLabel, 10, SpringLayout.NORTH, this);
 		appLayout.putConstraint(SpringLayout.WEST, championPicLabel, 10, SpringLayout.WEST, this);
+		appLayout.putConstraint(SpringLayout.SOUTH, version, 0, SpringLayout.SOUTH, championPicLabel);
+		appLayout.putConstraint(SpringLayout.EAST, version, 0, SpringLayout.EAST, runes2Slot1);
 		appLayout.putConstraint(SpringLayout.EAST, item5, -260, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.EAST, summonerSpell1, -301, SpringLayout.EAST, this);
 		appLayout.putConstraint(SpringLayout.EAST, item6, -33, SpringLayout.WEST, runes1Slot3);
 		appLayout.putConstraint(SpringLayout.EAST, item4, -343, SpringLayout.EAST, this);
 	}
 	
-	
-	
-	
-	
-	
-	//startAbstraction
 	private void updateInfo()
 	{
-		Champion currentChampion = randomizeChampion();								//All these methods pick components from lists based on conditions as well as randomization
+		Champion currentChampion = randomizeChampion();
 		ArrayList<String> summonerSpells = randomizeSummonerSpells();
 		ArrayList<String> runes = randomizeRunes();
-		ArrayList<String> items = randomizeItems(currentChampion, summonerSpells);	//Items are randomly chosen based on current character as well as current spells
+		ArrayList<String> items = randomizeItems(currentChampion, summonerSpells);
 		String boot = randomizeBoot();
 		
-		//endAbstraction
-		//The code below displays certain images depending on what's in the lists
+		
 		nameLabel.setText(currentChampion.getName());
 		titleLabel.setText(currentChampion.getTitle());
 		
@@ -242,7 +245,7 @@ public class Panel extends JPanel
 		runes2Slot2.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/runes/" 
 								 + runes.get(5) + "Picture.png")));
 		
-		//This section uses logic by checking if the currently selected character is 'Viktor' and if it is, it displays a certain image for them
+		
 		if (currentChampion.getName().equals("Viktor"))
 		{
 			item1.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
@@ -266,7 +269,6 @@ public class Panel extends JPanel
 		item5.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/" 
 				 + items.get(4) + "Picture.png")));
 		
-		//This section uses logic by checking if the currently selected character is 'Cassiopeia' and if it is, it then takes another item from the lists instead of displaying boots
 		if (currentChampion.getName().equals("Cassiopeia"))
 		{
 			item6.setIcon(new ImageIcon(Panel.class.getResource("/raptor/view/images/items/"
@@ -299,14 +301,12 @@ public class Panel extends JPanel
 		Random randomNum = new Random();
 		int secondSpellindex = 0;
 
-		currentSummonerSpellList.add(appController.getSummonerSpellList()
-				.get(randomNum.nextInt(appController.getSummonerSpellList().size())));
+		currentSummonerSpellList.add(appController.getSummonerSpellList().get(randomNum.nextInt(appController.getSummonerSpellList().size())));
 		
 		while (currentSummonerSpellList.get(0).equals(currentSummonerSpellList.get(secondSpellindex)))
 		{
 			secondSpellindex++;
-			currentSummonerSpellList.add(appController.getSummonerSpellList()
-					.get(randomNum.nextInt(appController.getSummonerSpellList().size())));
+			currentSummonerSpellList.add(appController.getSummonerSpellList().get(randomNum.nextInt(appController.getSummonerSpellList().size())));
 		}
 		
 		return currentSummonerSpellList;
@@ -314,14 +314,14 @@ public class Panel extends JPanel
 	
 	private ArrayList<String> randomizeRunes()
 	{
-		ArrayList<String> allRunes = new ArrayList<String>();	//List that contains all the runes (The circular images on the running app)
+		ArrayList<String> allRunes = new ArrayList<String>();
 		Random randomNum = new Random();
 		
 		int runesPathIndex = randomNum.nextInt(5);
 		String keystonePath;
 		String secondPath;
 		
-		if(runesPathIndex == 0)	//Picking the first major rune path, use of logical concepts
+		if(runesPathIndex == 0)
 		{
 			keystonePath = "Precision";
 			secondPath = appController.getSpecificListWithout(keystonePath).get(randomNum.nextInt(4));
@@ -352,12 +352,12 @@ public class Panel extends JPanel
 			secondPath = "";
 		}
 		
-		if (keystonePath.equals("Precision"))
+		if (keystonePath.equals("Precision"))							//Adds the keystone to the list
 		{
 			allRunes.add(appController.getSpecificList(keystonePath)
 					.get(randomNum.nextInt(4)));
 			
-			allRunes.add(appController.getSpecificList(keystonePath)
+			allRunes.add(appController.getSpecificList(keystonePath)	//Adds the three minor runes
 					.get(randomNum.nextInt(3) + 4));
 			
 			allRunes.add(appController.getSpecificList(keystonePath)
@@ -371,14 +371,13 @@ public class Panel extends JPanel
 			allRunes.add(appController.getSpecificList(keystonePath)
 					.get(randomNum.nextInt(3)));
 			
-			for (int index = 0, addition = 3; index < 3; index++, addition = addition + 3)	//Main use of mathematical concepts (adding the minor runes)
+			for (int index = 0, addition = 3; index < 3; index++, addition = addition + 3)	//Adds the three minor runes
 			{
 				allRunes.add(appController.getSpecificList(keystonePath)
 						.get(randomNum.nextInt(3) + addition));
 			}
 		}
-		
-		//More use of the mathematical concepts
+			
 		int randomRow = randomNum.nextInt(3);
 		int randomNextRow = randomNum.nextInt(2);
 		
@@ -502,15 +501,11 @@ public class Panel extends JPanel
 		return boot;
 	}
 	
-	
-	
-	
-	//startComplexity
 	private ArrayList<String> randomizeItems(Champion currentChampion, ArrayList summonerSpells)
 	{
 		ArrayList<String> allItems = new ArrayList<String>();
 		List<String> availableItems = new ArrayList<String>(appController.getItemsList());
-														//Logic concepts
+		
 		if (currentChampion.isChampionMelee() == true)	//If champion is melee
 		{
 			if (currentChampion.isFormChanger() == false)
@@ -522,7 +517,7 @@ public class Panel extends JPanel
 		{
 			if (currentChampion.isFormChanger() == false)
 			{
-				availableItems.remove(appController.findItemLocation("RavenousHydra", availableItems));
+				availableItems.remove(appController.findItemLocation("RavenousHydra", availableItems));	//May have to make it so both hydra and ravenous cannot both be bought
 				availableItems.remove(appController.findItemLocation("TitanicHydra", availableItems));
 				availableItems.remove(appController.findItemLocation("SteraksGage", availableItems));
 			}
@@ -540,7 +535,7 @@ public class Panel extends JPanel
 			availableItems.remove(appController.findItemLocation("StalkersBladeWarrior", availableItems));
 		}
 		
-		Random randomNum = new Random();	//Mathematical concepts
+		Random randomNum = new Random();
 		
 		for (int index = 0; index < 6; index++)
 		{
@@ -578,7 +573,6 @@ public class Panel extends JPanel
 		
 		return allItems;
 	}
-	//endComplexity
 	
 	private void setupListeners()
 	{

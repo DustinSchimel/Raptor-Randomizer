@@ -63,6 +63,96 @@ public class Controller
 	
 	public void buildChampionList()
 	{
+		championList.add(new Aatrox());
+		championList.add(new Ahri());
+		championList.add(new Akali());
+		championList.add(new Alistar());
+		championList.add(new Amumu());
+		championList.add(new Anivia());
+		championList.add(new Annie());
+		championList.add(new Ashe());
+		championList.add(new AurelionSol());
+		championList.add(new Azir());
+		championList.add(new Bard());
+		championList.add(new Blitzcrank());
+		championList.add(new Brand());
+		championList.add(new Braum());
+		championList.add(new Caitlyn());
+		championList.add(new Camille());
+		championList.add(new Cassiopeia());
+		championList.add(new ChoGath());
+		championList.add(new Corki());
+		championList.add(new Darius());
+		championList.add(new Diana());
+		championList.add(new Draven());
+		championList.add(new DrMundo());
+		championList.add(new Ekko());
+		championList.add(new Elise());
+		championList.add(new Evelynn());
+		championList.add(new Ezreal());
+		championList.add(new Fiddlesticks());
+		championList.add(new Fiora());
+		championList.add(new Fizz());
+		championList.add(new Galio());
+		championList.add(new Gangplank());
+		championList.add(new Garen());
+		championList.add(new Gnar());
+		championList.add(new Gragas());
+		championList.add(new Graves());
+		championList.add(new Hecarim());
+		championList.add(new Heimerdinger());
+		championList.add(new Illaoi());
+		championList.add(new Irelia());
+		championList.add(new Ivern());
+		championList.add(new Janna());
+		championList.add(new JarvanIV());
+		championList.add(new Jax());
+		championList.add(new Jayce());
+		championList.add(new Jhin());
+		championList.add(new Jinx());
+		championList.add(new KaiSa());
+		championList.add(new Kalista());
+		championList.add(new Karma());
+		championList.add(new Karthus());
+		championList.add(new Kassadin());
+		championList.add(new Katarina());
+		championList.add(new Kayle());
+		championList.add(new Kayn());
+		championList.add(new Kennen());
+		championList.add(new KhaZix());
+		championList.add(new Kindred());
+		championList.add(new Kled());
+		championList.add(new KogMaw());
+		championList.add(new LeBlanc());
+		championList.add(new LeeSin());
+		championList.add(new Leona());
+		championList.add(new Lissandra());
+		championList.add(new Lucian());
+		championList.add(new Lulu());
+		championList.add(new Lux());
+		championList.add(new Malphite());
+		championList.add(new Malzahar());
+		championList.add(new Maokai());
+		championList.add(new MasterYi());
+		championList.add(new MissFortune());
+		championList.add(new Mordekaiser());
+		championList.add(new Morgana());
+		championList.add(new Nami());
+		championList.add(new Nasus());
+		championList.add(new Nautilus());
+		championList.add(new Nidalee());
+		championList.add(new Nocturne());
+		championList.add(new Nunu());
+		championList.add(new Olaf());
+		championList.add(new Orianna());
+		championList.add(new Ornn());
+		championList.add(new Pantheon());
+		championList.add(new Poppy());
+		championList.add(new Quinn());
+		championList.add(new Rakan());
+		championList.add(new Rammus());
+		championList.add(new RekSai());
+		championList.add(new Renekton());
 		championList.add(new Rengar());
 		championList.add(new Riven());
 		championList.add(new Rumble());
@@ -113,6 +203,26 @@ public class Controller
 		championList.add(new Zilean());
 		championList.add(new Zoe());
 		championList.add(new Zyra());
+		
+		//Test multiform
+		//championList.add(new Jayce());
+		//championList.add(new Jayce());
+		
+		//Test melee
+		//championList.add(new Poppy());
+		//championList.add(new Poppy());
+		
+		//Test ranged
+		//championList.add(new Nami());
+		//championList.add(new Nami());
+		
+		//Test Cassiopeia
+		//championList.add(new Cassiopeia());
+		//championList.add(new Cassiopeia());
+		
+		//Test Viktor
+		//championList.add(new Viktor());
+		//championList.add(new Viktor());
 	}
 	
 	public void buildSummonerSpellList()
